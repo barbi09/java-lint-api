@@ -1,0 +1,1 @@
+Command to run api: npx ts-node src/index.ts
