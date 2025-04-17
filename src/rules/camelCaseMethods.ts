@@ -15,7 +15,6 @@ export const camelCaseMethods: Rule = (cst: any, file: string): Issue[] => {
         ?.children?.methodDeclarator?.[0]
         ?.children?.Identifier?.[0]?.image;
       const line = node.location?.startLine;
-      console.log('methodName', methodName);
       if (methodName && !isLowerCamelCase(methodName)) {
         issues.push({
           file,
