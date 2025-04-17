@@ -31,6 +31,7 @@ app.post('/analyze', upload.single('zip'), async (req, res): Promise<void> => {
 
     // 2. Find and analyze all .java files
     const javaFiles = globSync('**/*.java', { cwd: extractPath, absolute: true });
+    console.log('Found', javaFiles.length, 'Java files');
     const allIssues: Issue[] = [];
 
     for (const filePath of javaFiles) {

@@ -9,11 +9,13 @@ export const camelCaseMethods: Rule = (cst: any, file: string): Issue[] => {
 
   function walk(node: any) {
     if (!node || typeof node !== 'object') return;
-
+  
     if (node.name === 'methodDeclaration') {
-      const methodName = node.children?.Identifier?.[0]?.image;
+      const methodName = node.children?.methodHeader?.[0]
+        ?.children?.methodDeclarator?.[0]
+        ?.children?.Identifier?.[0]?.image;
       const line = node.location?.startLine;
-
+      console.log('methodName', methodName);
       if (methodName && !isLowerCamelCase(methodName)) {
         issues.push({
           file,
@@ -22,7 +24,7 @@ export const camelCaseMethods: Rule = (cst: any, file: string): Issue[] => {
         });
       }
     }
-
+  
     // Walk into all children
     if (node.children) {
       for (const key of Object.keys(node.children)) {
@@ -33,7 +35,11 @@ export const camelCaseMethods: Rule = (cst: any, file: string): Issue[] => {
       }
     }
   }
+  
 
   walk(cst);
   return issues;
 };
+
+
+
