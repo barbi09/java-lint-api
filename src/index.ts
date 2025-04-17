@@ -4,8 +4,7 @@ import unzipper from 'unzipper';
 import fs from 'fs-extra';
 import path from 'path';
 import { globSync } from 'glob';
-import { parse } from 'java-parser';
-
+import { rimraf } from 'rimraf';
 import { analyzeJavaFile, analyzeExcelFile } from './analyzer';
 import { Issue } from './rules/types';
 import { v4 as uuidv4 } from 'uuid';
@@ -85,17 +84,14 @@ app.post('/analyze', upload.fields([{ name: 'zip' }, { name: 'xlsx' }]), async (
   } finally {
     // ✅ Always cleanup uploaded files
     try {
-      try {
-        if (zipPath) await fs.remove(zipPath);
-        if (xlsxFile?.path) await fs.remove(xlsxFile.path);
-    
-        // Small delay to let Windows release file locks
-        await new Promise((resolve) => setTimeout(resolve, 200));
-    
-        if (extractPath) await fs.remove(extractPath);
-      } catch (cleanupError) {
-        console.error('Failed to clean up files:', cleanupError);
-      }
+      if (zipPath) await fs.remove(zipPath);
+      if (xlsxFile?.path) await fs.remove(xlsxFile.path);
+  
+      // Small wait for streams to close
+      await new Promise((resolve) => setTimeout(resolve, 300));
+  
+      if (extractPath) await rimraf(extractPath);
+      // <- use rimraf
     } catch (cleanupError) {
       console.error('Failed to clean up files:', cleanupError);
     }
