@@ -9,4 +9,4 @@ export interface Operation {
   backendOperationId: string;
 }
   
-  export type Rule = (ast: any, file: string) => Issue[];
+export type Rule = (cst: any, file: string, context?: any) => Issue[];

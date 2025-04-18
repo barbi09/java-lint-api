@@ -8,6 +8,8 @@ import { rimraf } from 'rimraf';
 import { analyzeJavaFile, analyzeExcelFile } from './analyzer';
 import { Issue } from './rules/types';
 import { v4 as uuidv4 } from 'uuid';
+import { kebabToLowerCamelCase } from './commons/utils';
+
 
 const app = express();
 const PORT = 3000;
@@ -64,7 +66,7 @@ app.post('/analyze', upload.fields([{ name: 'zip' }, { name: 'xlsx' }]), async (
     for (const filePath of javaFiles) {
       try {
         const code = await fs.readFile(filePath, 'utf8');
-        const issues = analyzeJavaFile(code, path.relative(extractPath, filePath));
+        const issues = analyzeJavaFile(code, path.relative(extractPath, filePath), { operations: operationsData.map(op => kebabToLowerCamelCase(op.id)) });
         javaIssues.push(...issues);
       } catch (err) {
         console.error(`Failed to parse ${filePath}:`, (err as Error).message);
@@ -73,8 +75,7 @@ app.post('/analyze', upload.fields([{ name: 'zip' }, { name: 'xlsx' }]), async (
 
     // ✅ Return final response
     res.json({
-      javaIssues,
-      operationsData
+      javaIssues
     });
 
   } catch (err) {

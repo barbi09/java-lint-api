@@ -2,19 +2,20 @@ import { parse } from 'java-parser';
 import { rules } from './rules';
 import { Issue, Operation } from './rules/types';
 import XLSX from 'xlsx';
-import { BACKEND_OPERATION_ID_CELL, HTTP_METHOD_PREFIXES } from './utils/constants';
+import { BACKEND_OPERATION_ID_CELL, HTTP_METHOD_PREFIXES } from './commons/constants';
 
 
-export function analyzeJavaFile(code: string, file: string): Issue[] {
+export function analyzeJavaFile(code: string, file: string, operationsData?: any): Issue[] {
     const cst = parse(code);
     const issues: Issue[] = [];
-
+  
     for (const rule of rules) {
-        issues.push(...rule(cst, file));
+      issues.push(...rule(cst, file, operationsData));
     }
   
     return issues;
-}
+  }
+  
 
 export function analyzeExcelFile(xlsxFile: any): Operation[] {
     const workbook = XLSX.readFile(xlsxFile.path);
