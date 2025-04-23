@@ -66,7 +66,7 @@ app.post('/analyze', upload.fields([{ name: 'zip' }, { name: 'xlsx' }]), async (
     for (const filePath of javaFiles) {
       try {
         const code = await fs.readFile(filePath, 'utf8');
-        const issues = analyzeJavaFile(code, path.relative(extractPath, filePath), { operations: operationsData.map(op => kebabToLowerCamelCase(op.id)) });
+        const issues = analyzeJavaFile(code, path.relative(extractPath, filePath), operationsData);
         javaIssues.push(...issues);
       } catch (err) {
         console.error(`Failed to parse ${filePath}:`, (err as Error).message);

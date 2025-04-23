@@ -1,8 +1,8 @@
 import { Rule } from './types';
-import { camelCaseMethods } from './camelCaseMethods';
+import { validateNameMethods } from './validateNameMethods';
 // import other rules here
 
 export const rules: Rule[] = [
-  camelCaseMethods,
+  validateNameMethods,
   // other rules go here
 ];

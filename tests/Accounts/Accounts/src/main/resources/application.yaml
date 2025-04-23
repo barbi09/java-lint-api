@@ -1,0 +1,107 @@
+spring:
+  jackson:
+    time-zone: GMT
+  config:
+    import:
+      - optional:classpath:secrets.yaml
+      - optional:classpath:targets.yaml
+      - optional:classpath:config.yaml
+      - optional:file:/app/configs/targets.yaml
+      - optional:file:/app/configs/config.yaml
+      - optional:file:/app/secrets/credentials.yaml
+  main:
+    web-application-type: reactive
+
+server:
+  port: ${app.port}
+  error:
+    include-stacktrace: never
+
+version: "V1.0.0"
+
+custom-logger:
+  showHeaders: false
+
+logging.logstash:
+  enabled: true
+  url: localhost:8500
+  ignorePatterns: .*(favicon).*
+  logHeaders: true
+
+logging:
+  config: classpath:logback.xml
+  level:
+    root: INFO
+    org:
+      springframework: info
+      web: DEBUG
+      cloud:
+        sleuth: DEBUG
+    reactor:
+      netty:
+        http:
+          client: INFO
+
+# ACTUATOR
+management:
+  tracing:
+    enabled: true
+    sampling:
+      probability: 1.0
+  endpoints:
+    web:
+      exposure:
+        include: "health, info"
+
+springdoc:
+  swagger-ui:
+    disable-swagger-default-url: true
+    tags-sorter: alpha
+    operations-sorter: alpha
+    doc-expansion: none
+
+# span-not-exportable: false
+
+http-clients:
+  timeouts:
+    connect: ${backends.timeouts.connect}
+    read: ${backends.timeouts.read}
+    write: ${backends.timeouts.write}
+    response: ${backends.timeouts.response}
+  backends:
+    cts-rest-executor:
+      host: ${backends.cts-rest-executor.protocol}://${backends.cts-rest-executor.host}
+      port: ${backends.cts-rest-executor.port}
+      idTokenInfo: CTSRESTEXECUTOR
+      endpoints:
+        security:
+          path: /CTSRestAuthentication/resource/authenticate/relation
+        sp-execute:
+          path: /CTSRestExecutor/resource/sp/execute
+
+# >>> APPLICATION CONFIG <<<
+app:
+  name: Accounts
+  id: accounts
+  artifact: accounts.jar
+  port: 8080
+  charset: UTF-8
+  logging:
+    level: INFO
+  apiDocs:
+    enabled: true
+  basepath: /v1/accounts
+  oas: /app-accounts.yaml
+  operations:
+    getList:
+      path: /list
+      description: Consulta las cuentas asociadas a un cliente por el código interno del cliente.
+    getBalance:
+      path: /{account-number}/balance
+      description: Consulta de los saldos de una cuenta.
+    getDetail:
+      path: /{account-number}
+      description: Consulta el detalle de una cuenta.
+    getMovements:
+      path: /{account-number}/movements
+      description: Consulta de Movimientos de cuentas.

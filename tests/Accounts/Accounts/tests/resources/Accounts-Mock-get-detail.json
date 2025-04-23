@@ -1,0 +1,194 @@
+{
+  "uuid": "c4f75ab9-5a7d-40b8-bd4e-31985981360b",
+  "lastMigration": 32,
+  "name": "Accounts-get-detail",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3003,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "64966d8f-9c06-4ad7-93cf-00301ae00a01",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "CTSRestAuthentication/resource/authenticate/relation",
+      "responses": [
+        {
+          "uuid": "4b925446-6b64-464e-821c-ed26944d5b61",
+          "body": "",
+          "latency": 0,
+          "statusCode": 204,
+          "label": "",
+          "headers": [
+            {
+              "key": "Authorization",
+              "value": "Bearer token12"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "86628180-ffdd-4ae2-85bf-70abe75251ff",
+      "type": "http",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "CTSRestExecutor/resource/sp/execute",
+      "responses": [
+        {
+          "uuid": "adf35e94-0ffd-4d50-9750-a6c3c3f1a18c",
+          "body": "{\r\n          \"errors\": [],\r\n          \"messages\": [],\r\n          \"params\": [\r\n            {\r\n              \"dataType\": 39,\r\n              \"value\": \"FONTANA AMILCAR DANIEL\",\r\n              \"name\": \"@o_d_nombre\",\r\n              \"len\": 0\r\n            },\r\n            {\r\n              \"len\": 0,\r\n              \"name\": \"@o_n_cbu\",\r\n              \"value\": \"2850001040094059465088\",\r\n              \"dataType\": 39\r\n            },\r\n            {\r\n              \"name\": \"@o_c_oficial\",\r\n              \"value\": \"14403\",\r\n              \"dataType\": 52,\r\n              \"len\": 0\r\n            },\r\n            {\r\n              \"len\": 0,\r\n              \"value\": \"MORALES GUSTAVO ALEJANDRO\",\r\n              \"name\": \"@o_d_oficial\",\r\n              \"dataType\": 39\r\n            },\r\n            {\r\n              \"value\": \"80\",\r\n              \"len\": 0,\r\n              \"name\": \"@o_c_moneda\",\r\n              \"dataType\": 48\r\n            },\r\n            {\r\n              \"name\": \"@o_c_categoria\",\r\n              \"value\": \"XXI\",\r\n              \"len\": 0,\r\n              \"dataType\": 39\r\n            },\r\n            {\r\n              \"value\": \"EMPRENDE XXI\",\r\n              \"dataType\": 39,\r\n              \"len\": 0,\r\n              \"name\": \"@o_d_categoria\"\r\n            },\r\n            {\r\n              \"value\": \"782\",\r\n              \"name\": \"@o_c_oficina\",\r\n              \"dataType\": 52,\r\n              \"len\": 0\r\n            },\r\n            {\r\n              \"name\": \"@o_d_oficina\",\r\n              \"value\": \"PLAZA POSADAS\",\r\n              \"len\": 0,\r\n              \"dataType\": 39\r\n            },\r\n            {\r\n              \"dataType\": 48,\r\n              \"value\": \"4\",\r\n              \"len\": 0,\r\n              \"name\": \"@o_c_producto\"\r\n            },\r\n            {\r\n              \"len\": 0,\r\n              \"value\": \"CUENTA DE AHORROS\",\r\n              \"name\": \"@o_d_producto\",\r\n              \"dataType\": 39\r\n            },\r\n            {\r\n              \"len\": 0,\r\n              \"name\": \"@o_c_prod_banc\",\r\n              \"value\": \"3\",\r\n              \"dataType\": 52\r\n            },\r\n            {\r\n              \"name\": \"@o_d_prod_banc\",\r\n              \"dataType\": 39,\r\n              \"value\": \"CAJA DE AHORROS\",\r\n              \"len\": 0\r\n            },\r\n            {\r\n              \"len\": 0,\r\n              \"name\": \"@o_c_estado\",\r\n              \"value\": \"A\",\r\n              \"dataType\": 47\r\n            },\r\n            {\r\n              \"len\": 0,\r\n              \"value\": \"20070419\",\r\n              \"dataType\": 39,\r\n              \"name\": \"@o_f_apertura\"\r\n            },\r\n            {\r\n              \"name\": \"@o_c_tipocta\",\r\n              \"len\": 0,\r\n              \"value\": \"P\",\r\n              \"dataType\": 47\r\n            },\r\n            {\r\n              \"name\": \"@o_f_ultimo_movimiento\",\r\n              \"dataType\": 39,\r\n              \"value\": \"20241115\",\r\n              \"len\": 0\r\n            },\r\n            {\r\n              \"name\": \"@o_m_bloq_deposito\",\r\n              \"dataType\": 47,\r\n              \"len\": 0,\r\n              \"value\": \"N\"\r\n            },\r\n            {\r\n              \"dataType\": 47,\r\n              \"value\": \"N\",\r\n              \"name\": \"@o_m_bloq_retiro\",\r\n              \"len\": 0\r\n            }\r\n          ],\r\n          \"resultSetListSize\": 0,\r\n          \"resultSets\": [],\r\n          \"errorListSize\": 0,\r\n          \"returnCode\": 0,\r\n          \"dataMessageLoaded\": true,\r\n          \"messageListSize\": 0\r\n        }\r\n",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "- Response ok",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "96c0b413-f3ef-40b7-883d-d738939d516a",
+          "body": "{\r\n    \"resultSetListSize\": 0,\r\n    \"returnCode\": -1,\r\n    \"errorListSize\": 0,\r\n    \"resultSets\": [],\r\n    \"dataMessageLoaded\": true,\r\n    \"messages\": [\r\n      {\r\n        \"messageText\": \"Parámetro: @i_cuenta, DataType: 56, DataLen: 10, Valor: 9413530129,  Tipo de Dato Incorrecto / Valor Máximo excedido\",\r\n        \"messageNumber\": 80102,\r\n        \"type\": 3\r\n      }\r\n    ],\r\n    \"params\": [\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 39,\r\n            \"name\": \"@o_n_cbu\",\r\n            \"value\": \"2850008930000000011647\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 48,\r\n            \"name\": \"@o_c_producto\",\r\n            \"value\": \"3\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 60,\r\n            \"name\": \"@o_i_remesas\",\r\n            \"value\": \"-94129.26000000001\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 60,\r\n            \"name\": \"@o_i_24h\",\r\n            \"value\": \"203782.18\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 60,\r\n            \"name\": \"@o_i_disponible\",\r\n            \"value\": \"0.0\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 60,\r\n            \"name\": \"@o_i_saldo_contable\",\r\n            \"value\": \"283644.56\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 60,\r\n            \"name\": \"@o_i_saldo_para_girar\",\r\n            \"value\": \"-94129.26000000001\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 60,\r\n            \"name\": \"@o_i_bloqueo_valores\",\r\n            \"value\": \"0.0\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 60,\r\n            \"name\": \"@o_i_48h\",\r\n            \"value\": \"0.0\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 60,\r\n            \"name\": \"@o_i_valores_suspenso\",\r\n            \"value\": \"0.0\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 60,\r\n            \"name\": \"@o_i_acuerdos\",\r\n            \"value\": \"0.0\"\r\n        }\r\n    ],\r\n    \"errors\": [],\r\n    \"messageListSize\": 0\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "- Response error (returnCode -1)",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "ef969733-bb36-4360-b969-9803b9dea575",
+          "body": "{\r\n    \"resultSetListSize\": 0,\r\n    \"returnCode\": 0,\r\n    \"errorListSize\": 0,\r\n    \"resultSets\": [],\r\n    \"dataMessageLoaded\": true,\r\n    \"messages\": [],\r\n    \"params\": [],\r\n    \"errors\": [],\r\n    \"messageListSize\": 0\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "- Sin data",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "c49faf09-0b1e-4b23-a598-91de021cb7bc",
+          "body": "{\r\n    \"resultSetListSize\": 0,\r\n    \"returnCode\": 0,\r\n    \"errorListSize\": 0,\r\n    \"resultSets\": [],\r\n    \"dataMessageLoaded\": true,\r\n    \"messages\": [\r\n      {\r\n        \"messageText\": \"Parámetro: @i_cuenta, DataType: 56, DataLen: 10, Valor: 9413530129,  Tipo de Dato Incorrecto / Valor Máximo excedido\",\r\n        \"messageNumber\": 80102,\r\n        \"type\": 3\r\n      }\r\n    ],\r\n    \"params\": [],\r\n    \"errors\": [],\r\n    \"messageListSize\": 0\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "- Response error (returnCode 0)",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "e1c28c37-ca1a-4cee-8a55-8fdfa736fa91",
+          "body": "{\r\n    \"resultSetListSize\": 1,\r\n    \"returnCode\": 0,\r\n    \"errorListSize\": 0,\r\n    \"resultSets\": [\r\n        {\r\n            \"metaData\": {\r\n                \"columnsNumber\": 4,\r\n                \"columnsMetaData\": [\r\n                    {\r\n                        \"name\": \"NOMBRE APELLIDO\",\r\n                        \"length\": 50,\r\n                        \"type\": 39\r\n                    },\r\n                    {\r\n                        \"name\": \"CUIT CUIL\",\r\n                        \"length\": 30,\r\n                        \"type\": 39\r\n                    },\r\n                    {\r\n                        \"name\": \"ROL\",\r\n                        \"length\": 1,\r\n                        \"type\": 47\r\n                    },\r\n                    {\r\n                        \"name\": \"DESCRIPCION ROL\",\r\n                        \"length\": 40,\r\n                        \"type\": 39\r\n                    }\r\n                ]\r\n            },\r\n            \"data\": {\r\n                \"rowsNumber\": 3,\r\n                \"rows\": [\r\n                    {\r\n                        \"columns\": [\r\n                            {\r\n                                \"valueObj\": \"AMILCAR DANIEL FONTANA\",\r\n                                \"null\": false,\r\n                                \"value\": \"AMILCAR DANIEL FONTANA\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"20172997989\",\r\n                                \"null\": false,\r\n                                \"value\": \"20172997989\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"T\",\r\n                                \"null\": false,\r\n                                \"value\": \"T\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"T- TITULAR\",\r\n                                \"null\": false,\r\n                                \"value\": \"T- TITULAR\"\r\n                            }\r\n                        ],\r\n                        \"columnsNumber\": 4\r\n                    },\r\n                    {\r\n                        \"columns\": [\r\n                            {\r\n                                \"valueObj\": \"JESICA SOLEDAD FONTANA\",\r\n                                \"null\": false,\r\n                                \"value\": \"JESICA SOLEDAD FONTANA\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"20361998392\",\r\n                                \"null\": false,\r\n                                \"value\": \"20361998392\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"F\",\r\n                                \"null\": false,\r\n                                \"value\": \"F\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"F- FIRMANTE\",\r\n                                \"null\": false,\r\n                                \"value\": \"F- FIRMANTE\"\r\n                            }\r\n                        ],\r\n                        \"columnsNumber\": 4\r\n                    },\r\n                    {\r\n                        \"columns\": [\r\n                            {\r\n                                \"valueObj\": \"SERGIO DANIEL FONTANA\",\r\n                                \"null\": false,\r\n                                \"value\": \"SERGIO DANIEL FONTANA\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"20377055048\",\r\n                                \"null\": false,\r\n                                \"value\": \"20377055048\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"F\",\r\n                                \"null\": false,\r\n                                \"value\": \"F\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"F- FIRMANTE\",\r\n                                \"null\": false,\r\n                                \"value\": \"F- FIRMANTE\"\r\n                            }\r\n                        ],\r\n                        \"columnsNumber\": 4\r\n                    }\r\n                ]\r\n            },\r\n            \"type\": 1\r\n        }\r\n    ],\r\n    \"dataMessageLoaded\": true,\r\n    \"messages\": [],\r\n    \"params\": [\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 39,\r\n            \"name\": \"@o_d_nombre\",\r\n            \"value\": \"FONTANA AMILCAR DANI\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 39,\r\n            \"name\": \"@o_n_cbu\",\r\n            \"value\": \"2850001030094005821211\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 52,\r\n            \"name\": \"@o_c_oficial\",\r\n            \"value\": \"14403\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 48,\r\n            \"name\": \"@o_c_moneda\",\r\n            \"value\": \"80\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 39,\r\n            \"name\": \"@o_c_categoria\",\r\n            \"value\": \"XXI\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 52,\r\n            \"name\": \"@o_c_oficina\",\r\n            \"value\": \"200\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 48,\r\n            \"name\": \"@o_c_producto\",\r\n            \"value\": \"3\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 52,\r\n            \"name\": \"@o_c_prod_banc\",\r\n            \"value\": \"1\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 47,\r\n            \"name\": \"@o_c_estado\",\r\n            \"value\": \"A\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 39,\r\n            \"name\": \"@o_f_apertura\",\r\n            \"value\": \"20051028\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 47,\r\n            \"name\": \"@o_c_tipocta\",\r\n            \"value\": \"P\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 39,\r\n            \"name\": \"@o_f_ultimo_movimiento\",\r\n            \"value\": \"20241227\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 47,\r\n            \"name\": \"@o_m_bloq_deposito\",\r\n            \"value\": \"N\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 47,\r\n            \"name\": \"@o_m_bloq_retiro\",\r\n            \"value\": \"N\"\r\n        }\r\n    ],\r\n    \"errors\": [],\r\n    \"messageListSize\": 0\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "86628180-ffdd-4ae2-85bf-70abe75251ff"
+    },
+    {
+      "type": "route",
+      "uuid": "64966d8f-9c06-4ad7-93cf-00301ae00a01"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}

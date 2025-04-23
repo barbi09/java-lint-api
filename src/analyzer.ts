@@ -2,10 +2,10 @@ import { parse } from 'java-parser';
 import { rules } from './rules';
 import { Issue, Operation } from './rules/types';
 import XLSX from 'xlsx';
-import { BACKEND_OPERATION_ID_CELL, HTTP_METHOD_PREFIXES } from './commons/constants';
+import { BACKEND_OPERATION_ID_CELL, HTTP_METHOD_PREFIXES, BACKEND_ID_CELL } from './commons/constants';
 
 
-export function analyzeJavaFile(code: string, file: string, operationsData?: any): Issue[] {
+export function analyzeJavaFile(code: string, file: string, operationsData?: Operation[]): Issue[] {
     const cst = parse(code);
     const issues: Issue[] = [];
   
@@ -27,10 +27,12 @@ export function analyzeExcelFile(xlsxFile: any): Operation[] {
   
           const sheet = workbook.Sheets[sheetName];
           const backendOperationIdCell = sheet[BACKEND_OPERATION_ID_CELL];
+          const backendIdCell = sheet[BACKEND_ID_CELL];
   
           operations.push({
             id: sheetName,
-            backendOperationId: backendOperationIdCell ? backendOperationIdCell.v : null
+            backendOperationId: backendOperationIdCell ? backendOperationIdCell.v : null,
+            backendId: backendIdCell ? backendIdCell.v : null
           });
         }
       });

@@ -1,0 +1,48 @@
+resilience4j:
+  circuitbreaker:
+    instances:
+      circuitBreakerDemo:
+        # Habilita o deshabilita el registro del indicador de salud para este Circuit Breaker
+        registerHealthIndicator: true
+        # Tamaño de la ventana deslizante para estadísticas de fallos
+        sliding-window-size: 5
+        # Tipo de ventana deslizante (COUNT_BASED o TIME_BASED)
+        sliding-window-type: COUNT_BASED
+        # Número mínimo de llamadas antes de que el Circuit Breaker se active
+        minimum-number-of-calls: 10
+        # Número permitido de llamadas en el estado de medio abierto
+        permitted-number-of-calls-in-half-open-state: 2
+        # Duración de espera en el estado abierto antes de intentar una llamada
+        wait-duration-in-open-state: 5000
+        # Umbral de tasa de fallos (0-100) para activar el estado abierto
+        failure-rate-threshold: 50
+  retry:
+    instances:
+      retryCircuitBreakerDemo:
+        # Número máximo de reintentos
+        max-retry-attempts: 3
+        # Duración de espera entre reintentos
+        wait-duration: 2000
+        # Indica si se deben realizar reintentos solo en excepciones específicas
+        retry-on-exception: true
+  ratelimiter:
+    instances:
+      rateLimiterCircuitBreakerDemo:
+        # Período de actualización del límite
+        limit-refresh-period: 1000
+        # Límite máximo de llamadas permitidas en el período
+        limit-for-period: 10
+  bulkhead:
+    instances:
+      bulkheadCircuitBreakerDemo:
+        # Número máximo de llamadas concurrentes permitidas
+        max-concurrent-calls: 10
+        # Duración máxima de espera en cola antes de que se rechace la llamada
+        max-wait-duration: 100
+  timelimiter:
+    instances:
+      timeLimiterCircuitBreakerDemo:
+        # Duración máxima de tiempo permitida para la ejecución de una operación
+        timeout-duration: 2000
+        # Indica si se debe cancelar una operación en ejecución si se excede el tiempo límite
+        cancel-running-future: true
