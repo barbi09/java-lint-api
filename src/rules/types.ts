@@ -1,4 +1,5 @@
 export interface Issue {
+    rule: string;
     file: string;
     line?: number;
     message: string;

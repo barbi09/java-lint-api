@@ -3,12 +3,13 @@ import multer from 'multer';
 import unzipper from 'unzipper';
 import fs from 'fs-extra';
 import path from 'path';
+import { parse } from 'java-parser';
 import { globSync } from 'glob';
 import { rimraf } from 'rimraf';
 import { analyzeJavaFile, analyzeExcelFile } from './analyzer';
 import { Issue } from './rules/types';
 import { v4 as uuidv4 } from 'uuid';
-import { kebabToLowerCamelCase } from './commons/utils';
+import { extractConstantsFromCst, kebabToLowerCamelCase } from './commons/utils';
 
 
 const app = express();
@@ -60,13 +61,29 @@ app.post('/analyze', upload.fields([{ name: 'zip' }, { name: 'xlsx' }]), async (
     }
 
     // Step 3: Analyze Java files
-    const javaFiles = globSync('**/*.java', { cwd: extractPath, absolute: true });
+    const javaFiles = globSync('**/*.java', {
+      cwd: extractPath,
+      absolute: true,
+      ignore: ['**/target/**']
+    });
+
+    const constantsFilePath = javaFiles.find(p => p.endsWith('Constants.java'));
+    let globalConstants: { name: string; line: number }[] = [];
+
+    if (constantsFilePath) {
+      const constantsCode = await fs.readFile(constantsFilePath, 'utf8');
+      const constantsCst = parse(constantsCode); // using java-parser
+      globalConstants = extractConstantsFromCst(constantsCst); // <-- your util function
+    }
+    
     const javaIssues: Issue[] = [];
+    const globalUsedConstants = new Set<string>();
+
 
     for (const filePath of javaFiles) {
       try {
         const code = await fs.readFile(filePath, 'utf8');
-        const issues = analyzeJavaFile(code, path.relative(extractPath, filePath), operationsData);
+        const issues = analyzeJavaFile(code, path.relative(extractPath, filePath), operationsData, globalUsedConstants);
         javaIssues.push(...issues);
       } catch (err) {
         console.error(`Failed to parse ${filePath}:`, (err as Error).message);

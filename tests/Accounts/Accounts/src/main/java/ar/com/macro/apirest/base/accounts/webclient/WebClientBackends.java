@@ -41,6 +41,7 @@ public class WebClientBackends {
     @Autowired private TokenManager tm;
     @Autowired private final CommonRequestUtils ru;
     private final HttpClientsConfig clients;
+    private static final String clientsData;
     private final BackendErrorStatusHandlerImpl sh = new BackendErrorStatusHandlerImpl();
 
     //Operation: get-list
@@ -364,6 +365,23 @@ public class WebClientBackends {
     }
 
     public void validate_Dates(String dateFromStr, String dateToStr, DateTimeFormatter formatter) throws CustomException {
+        LocalDate dateFrom = LocalDate.parse(dateFromStr, formatter);
+        LocalDate dateTo = LocalDate.parse(dateToStr, formatter);
+
+        if(DateUtils.isDateOrderInvalid(dateFrom, dateTo)){
+            ArrayList<ExceptionDetails> details = new ArrayList<>();
+            details.add(new ExceptionDetails(Constants.ERROR_CODE_409, Constants.MESSAGE_ERROR_DATE_INVALID, ""));
+            throw new CustomException().errorConflict(VContext.getTraceId(), details);
+        }
+        if(!DateUtils.validateDateRange(dateFrom, dateTo, Constants.CTS_REST_EXECUTOR_MAX_DATE_RANGE)){
+            ArrayList<ExceptionDetails> details = new ArrayList<>();
+            details.add(new ExceptionDetails(Constants.ERROR_CODE_409, Constants.MESSAGE_ERROR_DATE_RANGE_INVALID, ""));
+            throw new CustomException().errorConflict(VContext.getTraceId(), details);
+        }
+    }
+
+
+    private void validate_Dates_2(String dateFromStr, String dateToStr, DateTimeFormatter formatter) throws CustomException {
         LocalDate dateFrom = LocalDate.parse(dateFromStr, formatter);
         LocalDate dateTo = LocalDate.parse(dateToStr, formatter);
 

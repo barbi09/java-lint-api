@@ -8,7 +8,8 @@ function isLowerCamelCase(name: string): boolean {
 }
 
 export const validateNameMethods: Rule = (cst: any, file: string,  operations: Operation[] ): Issue[] => {
-  const issues: Issue[] = [];  
+  const issues: Issue[] = [];
+  const rule: string = 'Validate Name Methods';  
 
   function walk(node: any) {
     if (!node || typeof node !== 'object') return;
@@ -46,6 +47,7 @@ export const validateNameMethods: Rule = (cst: any, file: string,  operations: O
  
     if (classNames && !validOperations.includes(methodName)) {
       issues.push({
+        rule,
         file,
         line,
         message: `Method "${methodName}" does not match any expected operationId from Excel. Expected one of: ${validOperations.join(', ')}.`,
@@ -70,12 +72,14 @@ export const validateNameMethods: Rule = (cst: any, file: string,  operations: O
 
     if (classNames && !validOperations.includes(methodName) && !isExcludedMethod) {
       issues.push({
+        rule,
         file,
         line,
         message: `Method "${methodName}" does not match any expected WebClientBackends method naming convention. Expected one of: ${validOperations.join(', ')}.`,
       });
     }else if( classNames && isExcludedMethod && !isLowerCamelCase(methodName)){
       issues.push({
+        rule,
         file,
         line,
         message: `Method "${methodName}" should be in lowerCamelCase format.`,
@@ -93,12 +97,14 @@ export const validateNameMethods: Rule = (cst: any, file: string,  operations: O
 
     if (classNames && !validOperations.includes(methodName) && !isExcludedMethod) {
       issues.push({
+        rule,
         file,
         line,
         message: `Method "${methodName}" does not match any expected AppResponseHandler method naming convention. Expected one of: ${validOperations.join(', ')}.`,
       });
     }else if( classNames && isExcludedMethod && !isLowerCamelCase(methodName)){
       issues.push({
+        rule,
         file,
         line,
         message: `Method "${methodName}" should be in lowerCamelCase format.`,
@@ -114,12 +120,14 @@ export const validateNameMethods: Rule = (cst: any, file: string,  operations: O
 
     if (classNames && !validOperations.includes(methodName) && !isExcludedMethod) {
       issues.push({
+        rule,
         file,
         line,
         message: `Method "${methodName}" does not match any expected AppResponseMapper method naming convention. Expected one of: ${validOperations.join(', ')}.`,
       });
     }else if( classNames && isExcludedMethod && !isLowerCamelCase(methodName)){
       issues.push({
+        rule,
         file,
         line,
         message: `Method "${methodName}" should be in lowerCamelCase format.`,

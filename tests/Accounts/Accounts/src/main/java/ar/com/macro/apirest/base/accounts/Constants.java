@@ -55,4 +55,5 @@ public class Constants {
 
     // Dates
     public static final String DATE_FORMAT_YYMMDD = "yyMMdd";
+    public static final String DATE_FORMAT_YYMMDD_2 = "yyMMdd";
 }

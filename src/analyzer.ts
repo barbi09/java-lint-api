@@ -5,16 +5,29 @@ import XLSX from 'xlsx';
 import { BACKEND_OPERATION_ID_CELL, HTTP_METHOD_PREFIXES, BACKEND_ID_CELL } from './commons/constants';
 
 
-export function analyzeJavaFile(code: string, file: string, operationsData?: Operation[]): Issue[] {
+export function analyzeJavaFile(code: string, file: string, operationsData: Operation[]): Issue[] {
     const cst = parse(code);
     const issues: Issue[] = [];
-  
     for (const rule of rules) {
-      issues.push(...rule(cst, file, operationsData));
+      if(rule.name === "validateUnusedGlobalConstants"){
+        issues.push(...rule(cst, file, globalUsedConstants));
+      }else{
+        issues.push(...rule(cst, file, operationsData));
+      }
     }
   
     return issues;
   }
+
+  export function analyzeJavaFileConstants(code: string, file: string, operationsData: Operation[]) : rules[] {
+    const cst = parse(code);
+    let globalUsedConstants: Set<string>= new Set<string>();
+    
+    globalUsedConstants =  rules.name["validateUnusedGlobalConstants"](cst, file, globalUsedConstants);
+  
+    return globalUsedConstants;
+  }
+
   
 
 export function analyzeExcelFile(xlsxFile: any): Operation[] {
