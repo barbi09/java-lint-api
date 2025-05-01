@@ -1,0 +1,721 @@
+{
+	"info": {
+		"_postman_id": "6650b405-d1ee-4ae9-a0be-b712d27df74d",
+		"name": "12.topaz_account.postman_collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24297126"
+	},
+	"item": [
+		{
+			"name": "SP_detalle_cuentas",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Authorization}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{environSecurityToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"spName\": \"cob_cuentas..sp_cc_cuenta_TOPAZ\",\r\n    \"params\": [\r\n        {\r\n            \"name\": \"@t_trn\",\r\n            \"dataType\": 52,\r\n            \"value\": \"30272\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"Q\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_tipo_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"C\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_opcion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"B\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cta_banco\",\r\n            \"dataType\":39,\r\n            \"value\":\"300109400582121\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cliente\",\r\n            \"dataType\":56,\r\n            \"value\":\"1967434\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_formato_fecha\",\r\n            \"dataType\":52,\r\n            \"value\":\"112\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@o_d_nombre\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_n_cbu\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_oficial\",\r\n            \"dataType\":52,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_moneda\",\r\n            \"dataType\":48,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_categoria\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_oficina\",\r\n            \"dataType\":52,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_producto\",\r\n            \"dataType\":48,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_prod_banc\",\r\n            \"dataType\":52,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_estado\",\r\n            \"dataType\":47,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_f_apertura\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_tipocta\",\r\n            \"dataType\":47,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_f_ultimo_movimiento\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_m_bloq_deposito\",\r\n            \"dataType\":47,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_m_bloq_retiro\",\r\n            \"dataType\":47,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ctstest3:9080/CTSRestExecutor/resource/sp/execute",
+					"protocol": "http",
+					"host": [
+						"ctstest3"
+					],
+					"port": "9080",
+					"path": [
+						"CTSRestExecutor",
+						"resource",
+						"sp",
+						"execute"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "detalle de cuenta ok",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{environSecurityToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"spName\": \"cob_cuentas..sp_cc_cuenta_TOPAZ\",\r\n    \"params\": [\r\n        {\r\n            \"name\": \"@t_trn\",\r\n            \"dataType\": 52,\r\n            \"value\": \"30272\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"Q\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_tipo_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"C\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_opcion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"B\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cta_banco\",\r\n            \"dataType\":39,\r\n            \"value\":\"300109400582121\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cliente\",\r\n            \"dataType\":56,\r\n            \"value\":\"1967434\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_formato_fecha\",\r\n            \"dataType\":52,\r\n            \"value\":\"112\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@o_d_nombre\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_n_cbu\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_oficial\",\r\n            \"dataType\":52,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_moneda\",\r\n            \"dataType\":48,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_categoria\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_oficina\",\r\n            \"dataType\":52,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_producto\",\r\n            \"dataType\":48,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_prod_banc\",\r\n            \"dataType\":52,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_estado\",\r\n            \"dataType\":47,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_f_apertura\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_tipocta\",\r\n            \"dataType\":47,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_f_ultimo_movimiento\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_m_bloq_deposito\",\r\n            \"dataType\":47,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_m_bloq_retiro\",\r\n            \"dataType\":47,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ctstest3:9080/CTSRestExecutor/resource/sp/execute",
+							"protocol": "http",
+							"host": [
+								"ctstest3"
+							],
+							"port": "9080",
+							"path": [
+								"CTSRestExecutor",
+								"resource",
+								"sp",
+								"execute"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Aug 2024 17:05:56 GMT"
+						},
+						{
+							"key": "Content-Language",
+							"value": "en-US"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resultSetListSize\": 0,\n    \"returnCode\": 0,\n    \"errorListSize\": 0,\n    \"resultSets\": [],\n    \"dataMessageLoaded\": true,\n    \"messages\": [],\n    \"params\": [\n        {\n            \"len\": 0,\n            \"dataType\": 39,\n            \"name\": \"@o_d_nombre\",\n            \"value\": \"FONTANA AMILCAR DANI\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 39,\n            \"name\": \"@o_n_cbu\",\n            \"value\": \"2850001030094005821211\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 52,\n            \"name\": \"@o_c_oficial\",\n            \"value\": \"14403\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 48,\n            \"name\": \"@o_c_moneda\",\n            \"value\": \"80\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 39,\n            \"name\": \"@o_c_categoria\",\n            \"value\": \"XXI\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 52,\n            \"name\": \"@o_c_oficina\",\n            \"value\": \"200\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 48,\n            \"name\": \"@o_c_producto\",\n            \"value\": \"3\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 52,\n            \"name\": \"@o_c_prod_banc\",\n            \"value\": \"1\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 47,\n            \"name\": \"@o_c_estado\",\n            \"value\": \"A\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 39,\n            \"name\": \"@o_f_apertura\",\n            \"value\": \"20051028\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 47,\n            \"name\": \"@o_c_tipocta\",\n            \"value\": \"P\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 39,\n            \"name\": \"@o_f_ultimo_movimiento\",\n            \"value\": \"20240814\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 47,\n            \"name\": \"@o_m_bloq_deposito\",\n            \"value\": \"N\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 47,\n            \"name\": \"@o_m_bloq_retiro\",\n            \"value\": \"N\"\n        }\n    ],\n    \"errors\": [],\n    \"messageListSize\": 0\n}"
+				},
+				{
+					"name": "detalle-ok-400109405946508",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{environSecurityToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"spName\": \"cob_cuentas..sp_cc_cuenta_TOPAZ\",\r\n    \"params\": [\r\n        {\r\n            \"name\": \"@t_trn\",\r\n            \"dataType\": 52,\r\n            \"value\": \"30272\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"Q\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_tipo_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"C\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_opcion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"B\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cta_banco\",\r\n            \"dataType\":39,\r\n            \"value\":\"400109405946508\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cliente\",\r\n            \"dataType\":56,\r\n            \"value\":\"1967434\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_formato_fecha\",\r\n            \"dataType\":52,\r\n            \"value\":\"112\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@o_d_nombre\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_n_cbu\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_oficial\",\r\n            \"dataType\":52,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_moneda\",\r\n            \"dataType\":48,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_categoria\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_oficina\",\r\n            \"dataType\":52,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_producto\",\r\n            \"dataType\":48,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_prod_banc\",\r\n            \"dataType\":52,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_estado\",\r\n            \"dataType\":47,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_f_apertura\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_tipocta\",\r\n            \"dataType\":47,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_f_ultimo_movimiento\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_m_bloq_deposito\",\r\n            \"dataType\":47,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_m_bloq_retiro\",\r\n            \"dataType\":47,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ctstest3:9080/CTSRestExecutor/resource/sp/execute",
+							"protocol": "http",
+							"host": [
+								"ctstest3"
+							],
+							"port": "9080",
+							"path": [
+								"CTSRestExecutor",
+								"resource",
+								"sp",
+								"execute"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Aug 2024 17:07:36 GMT"
+						},
+						{
+							"key": "Content-Language",
+							"value": "en-US"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resultSetListSize\": 0,\n    \"returnCode\": 0,\n    \"errorListSize\": 0,\n    \"resultSets\": [],\n    \"dataMessageLoaded\": true,\n    \"messages\": [],\n    \"params\": [\n        {\n            \"len\": 0,\n            \"dataType\": 39,\n            \"name\": \"@o_d_nombre\",\n            \"value\": \"FONTANA AMILCAR DANIEL\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 39,\n            \"name\": \"@o_n_cbu\",\n            \"value\": \"2850001040094059465088\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 52,\n            \"name\": \"@o_c_oficial\",\n            \"value\": \"14403\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 48,\n            \"name\": \"@o_c_moneda\",\n            \"value\": \"80\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 39,\n            \"name\": \"@o_c_categoria\",\n            \"value\": \"XXI\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 52,\n            \"name\": \"@o_c_oficina\",\n            \"value\": \"782\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 48,\n            \"name\": \"@o_c_producto\",\n            \"value\": \"4\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 52,\n            \"name\": \"@o_c_prod_banc\",\n            \"value\": \"3\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 47,\n            \"name\": \"@o_c_estado\",\n            \"value\": \"A\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 39,\n            \"name\": \"@o_f_apertura\",\n            \"value\": \"20070419\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 47,\n            \"name\": \"@o_c_tipocta\",\n            \"value\": \"P\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 39,\n            \"name\": \"@o_f_ultimo_movimiento\",\n            \"value\": \"20240814\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 47,\n            \"name\": \"@o_m_bloq_deposito\",\n            \"value\": \"N\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 47,\n            \"name\": \"@o_m_bloq_retiro\",\n            \"value\": \"N\"\n        }\n    ],\n    \"errors\": [],\n    \"messageListSize\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "SP_Consulta_Saldos",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Authorization}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{environSecurityToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"spName\": \"cob_cuentas..sp_cc_cuenta_TOPAZ\",\r\n    \"params\": [\r\n        {\r\n            \"name\": \"@t_trn\",\r\n            \"dataType\": 52,\r\n            \"value\": \"30272\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"Q\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_tipo_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"C\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_opcion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"S\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cta_banco\",\r\n            \"dataType\":39,\r\n            \"value\":\"2850001040094059465088\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cliente\",\r\n            \"dataType\":56,\r\n            \"value\":\"1967434\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@o_n_cbu\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_moneda\",\r\n            \"dataType\":48,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_d_moneda\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_producto\",\r\n            \"dataType\":48,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n\r\n        {\r\n            \"name\":\"@o_i_remesas\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_24h\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_disponible\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_saldo_contable\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_saldo_para_girar\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_bloqueo_valores\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_48h\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_valores_suspenso\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_acuerdos\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ctstest3:9080/CTSRestExecutor/resource/sp/execute",
+					"protocol": "http",
+					"host": [
+						"ctstest3"
+					],
+					"port": "9080",
+					"path": [
+						"CTSRestExecutor",
+						"resource",
+						"sp",
+						"execute"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "consulta con error",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{environSecurityToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"spName\": \"cob_cuentas..sp_cc_cuenta_TOPAZ\",\r\n    \"params\": [\r\n        {\r\n            \"name\": \"@t_trn\",\r\n            \"dataType\": 52,\r\n            \"value\": \"30272\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"Q\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_tipo_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"C\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_opcion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"S\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cta_banco\",\r\n            \"dataType\":39,\r\n            \"value\":\"2850001040094059465088\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cliente\",\r\n            \"dataType\":56,\r\n            \"value\":\"1967434\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@o_n_cbu\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_moneda\",\r\n            \"dataType\":48,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_d_moneda\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_producto\",\r\n            \"dataType\":48,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n\r\n        {\r\n            \"name\":\"@o_i_remesas\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_24h\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_disponible\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_saldo_contable\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_saldo_para_girar\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_bloqueo_valores\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_48h\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_valores_suspenso\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_acuerdos\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ctstest3:9080/CTSRestExecutor/resource/sp/execute",
+							"protocol": "http",
+							"host": [
+								"ctstest3"
+							],
+							"port": "9080",
+							"path": [
+								"CTSRestExecutor",
+								"resource",
+								"sp",
+								"execute"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Aug 2024 16:52:09 GMT"
+						},
+						{
+							"key": "Content-Language",
+							"value": "en-US"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resultSetListSize\": 0,\n    \"returnCode\": 601028,\n    \"errorListSize\": 0,\n    \"resultSets\": [],\n    \"dataMessageLoaded\": true,\n    \"messages\": [\n        {\n            \"messageText\": \"[sp_cc_cuenta_TOPAZ]  Cuenta consultada no existe\",\n            \"messageNumber\": 601028,\n            \"type\": 3\n        }\n    ],\n    \"params\": [\n        {\n            \"len\": 0,\n            \"dataType\": 39,\n            \"name\": \"@o_n_cbu\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 48,\n            \"name\": \"@o_c_moneda\",\n            \"value\": \"0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 39,\n            \"name\": \"@o_d_moneda\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 48,\n            \"name\": \"@o_c_producto\",\n            \"value\": \"0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_remesas\",\n            \"value\": \"0.0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_24h\",\n            \"value\": \"0.0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_disponible\",\n            \"value\": \"0.0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_saldo_contable\",\n            \"value\": \"0.0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_saldo_para_girar\",\n            \"value\": \"0.0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_bloqueo_valores\",\n            \"value\": \"0.0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_48h\",\n            \"value\": \"0.0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_valores_suspenso\",\n            \"value\": \"0.0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_acuerdos\",\n            \"value\": \"0.0\"\n        }\n    ],\n    \"errors\": [],\n    \"messageListSize\": 1\n}"
+				},
+				{
+					"name": "cuenta con saldo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{environSecurityToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"spName\": \"cob_cuentas..sp_cc_cuenta_TOPAZ\",\r\n    \"params\": [\r\n        {\r\n            \"name\": \"@t_trn\",\r\n            \"dataType\": 52,\r\n            \"value\": \"30272\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"Q\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_tipo_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"C\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_opcion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"S\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cta_banco\",\r\n            \"dataType\":39,\r\n            \"value\":\"300109400582121\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cliente\",\r\n            \"dataType\":56,\r\n            \"value\":\"1967434\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@o_n_cbu\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_moneda\",\r\n            \"dataType\":48,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_d_moneda\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_producto\",\r\n            \"dataType\":48,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n\r\n        {\r\n            \"name\":\"@o_i_remesas\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_24h\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_disponible\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_saldo_contable\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_saldo_para_girar\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_bloqueo_valores\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_48h\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_valores_suspenso\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_acuerdos\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ctstest3:9080/CTSRestExecutor/resource/sp/execute",
+							"protocol": "http",
+							"host": [
+								"ctstest3"
+							],
+							"port": "9080",
+							"path": [
+								"CTSRestExecutor",
+								"resource",
+								"sp",
+								"execute"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Aug 2024 16:59:02 GMT"
+						},
+						{
+							"key": "Content-Language",
+							"value": "en-US"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resultSetListSize\": 0,\n    \"returnCode\": 0,\n    \"errorListSize\": 0,\n    \"resultSets\": [],\n    \"dataMessageLoaded\": true,\n    \"messages\": [],\n    \"params\": [\n        {\n            \"len\": 0,\n            \"dataType\": 39,\n            \"name\": \"@o_n_cbu\",\n            \"value\": \"2850001030094005821211\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 48,\n            \"name\": \"@o_c_moneda\",\n            \"value\": \"80\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 39,\n            \"name\": \"@o_d_moneda\",\n            \"value\": \"PESOS\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 48,\n            \"name\": \"@o_c_producto\",\n            \"value\": \"3\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_remesas\",\n            \"value\": \"0.0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_24h\",\n            \"value\": \"0.0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_disponible\",\n            \"value\": \"8888180.51\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_saldo_contable\",\n            \"value\": \"2.008879197E9\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_saldo_para_girar\",\n            \"value\": \"2.0088728493400002E9\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_bloqueo_valores\",\n            \"value\": \"0.0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_48h\",\n            \"value\": \"0.0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_valores_suspenso\",\n            \"value\": \"0.0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_acuerdos\",\n            \"value\": \"0.0\"\n        }\n    ],\n    \"errors\": [],\n    \"messageListSize\": 0\n}"
+				},
+				{
+					"name": "cuenta_con_saldo_400109405946508",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{environSecurityToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"spName\": \"cob_cuentas..sp_cc_cuenta_TOPAZ\",\r\n    \"params\": [\r\n        {\r\n            \"name\": \"@t_trn\",\r\n            \"dataType\": 52,\r\n            \"value\": \"30272\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"Q\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_tipo_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"C\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_opcion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"S\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cta_banco\",\r\n            \"dataType\":39,\r\n            \"value\":\"400109405946508\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cliente\",\r\n            \"dataType\":56,\r\n            \"value\":\"1967434\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@o_n_cbu\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_moneda\",\r\n            \"dataType\":48,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_d_moneda\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_c_producto\",\r\n            \"dataType\":48,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n\r\n        {\r\n            \"name\":\"@o_i_remesas\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_24h\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_disponible\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_saldo_contable\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_saldo_para_girar\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_bloqueo_valores\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_48h\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_valores_suspenso\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_i_acuerdos\",\r\n            \"dataType\":60,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ctstest3:9080/CTSRestExecutor/resource/sp/execute",
+							"protocol": "http",
+							"host": [
+								"ctstest3"
+							],
+							"port": "9080",
+							"path": [
+								"CTSRestExecutor",
+								"resource",
+								"sp",
+								"execute"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Aug 2024 17:01:25 GMT"
+						},
+						{
+							"key": "Content-Language",
+							"value": "en-US"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resultSetListSize\": 0,\n    \"returnCode\": 0,\n    \"errorListSize\": 0,\n    \"resultSets\": [],\n    \"dataMessageLoaded\": true,\n    \"messages\": [],\n    \"params\": [\n        {\n            \"len\": 0,\n            \"dataType\": 39,\n            \"name\": \"@o_n_cbu\",\n            \"value\": \"2850001040094059465088\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 48,\n            \"name\": \"@o_c_moneda\",\n            \"value\": \"80\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 39,\n            \"name\": \"@o_d_moneda\",\n            \"value\": \"PESOS\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 48,\n            \"name\": \"@o_c_producto\",\n            \"value\": \"4\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_remesas\",\n            \"value\": \"4447.66\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_24h\",\n            \"value\": \"0.0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_disponible\",\n            \"value\": \"1.9999846688300002E9\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_saldo_contable\",\n            \"value\": \"1.99999101649E9\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_saldo_para_girar\",\n            \"value\": \"1.9999846688300002E9\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_bloqueo_valores\",\n            \"value\": \"0.0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_48h\",\n            \"value\": \"0.0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_valores_suspenso\",\n            \"value\": \"0.0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 60,\n            \"name\": \"@o_i_acuerdos\",\n            \"value\": \"0.0\"\n        }\n    ],\n    \"errors\": [],\n    \"messageListSize\": 0\n}"
+				}
+			]
+		},
+		{
+			"name": "SP_Lista_cuentas",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{Authorization}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "{{environSecurityToken}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"spName\": \"cob_cuentas..sp_cc_cuenta_TOPAZ\",\r\n    \"params\": [\r\n        {\r\n            \"name\": \"@t_trn\",\r\n            \"dataType\": 52,\r\n            \"value\": \"30272\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"C\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_tipo_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"A\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_opcion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"R\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cliente\",\r\n            \"dataType\":56,\r\n            \"value\":\"1967434\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_filas\",\r\n            \"dataType\":48,\r\n            \"value\":\"5\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cta_banco\",\r\n            \"dataType\":39,\r\n            \"value\":\"300800000001164\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@o_k_total\",\r\n            \"dataType\":56,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_k_pagina\",\r\n            \"dataType\":52,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_m_hay_mas\",\r\n            \"dataType\":47,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://ctstest3:9080/CTSRestExecutor/resource/sp/execute",
+					"protocol": "http",
+					"host": [
+						"ctstest3"
+					],
+					"port": "9080",
+					"path": [
+						"CTSRestExecutor",
+						"resource",
+						"sp",
+						"execute"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "1ra pagina, cant filas 3",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{environSecurityToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"spName\": \"cob_cuentas..sp_cc_cuenta_TOPAZ\",\r\n    \"params\": [\r\n        {\r\n            \"name\": \"@t_trn\",\r\n            \"dataType\": 52,\r\n            \"value\": \"30272\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"C\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_tipo_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"A\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_opcion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"R\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cliente\",\r\n            \"dataType\":56,\r\n            \"value\":\"1967434\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_filas\",\r\n            \"dataType\":48,\r\n            \"value\":\"3\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@o_k_total\",\r\n            \"dataType\":56,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_k_pagina\",\r\n            \"dataType\":52,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_m_hay_mas\",\r\n            \"dataType\":47,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ctstest3:9080/CTSRestExecutor/resource/sp/execute",
+							"protocol": "http",
+							"host": [
+								"ctstest3"
+							],
+							"port": "9080",
+							"path": [
+								"CTSRestExecutor",
+								"resource",
+								"sp",
+								"execute"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Aug 2024 16:35:09 GMT"
+						},
+						{
+							"key": "Content-Language",
+							"value": "en-US"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resultSetListSize\": 1,\n    \"returnCode\": 0,\n    \"errorListSize\": 0,\n    \"resultSets\": [\n        {\n            \"metaData\": {\n                \"columnsNumber\": 13,\n                \"columnsMetaData\": [\n                    {\n                        \"name\": \"CUENTA\",\n                        \"length\": 15,\n                        \"type\": 47\n                    },\n                    {\n                        \"name\": \"ESTADO CUENTA\",\n                        \"length\": 1,\n                        \"type\": 47\n                    },\n                    {\n                        \"name\": \"PRODUCTO\",\n                        \"length\": 3,\n                        \"type\": 48\n                    },\n                    {\n                        \"name\": \"DESCRIPCION PRODUCTO\",\n                        \"length\": 64,\n                        \"type\": 39\n                    },\n                    {\n                        \"name\": \"MONEDA\",\n                        \"length\": 3,\n                        \"type\": 48\n                    },\n                    {\n                        \"name\": \"CLIENTE\",\n                        \"length\": 11,\n                        \"type\": 56\n                    },\n                    {\n                        \"name\": \"PRODUCTO BANCARIO\",\n                        \"length\": 3,\n                        \"type\": 48\n                    },\n                    {\n                        \"name\": \"DESC PROD BANCARIO\",\n                        \"length\": 64,\n                        \"type\": 39\n                    },\n                    {\n                        \"name\": \"ROL DEL CLIENTE\",\n                        \"length\": 1,\n                        \"type\": 47\n                    },\n                    {\n                        \"name\": \"CBU\",\n                        \"length\": 22,\n                        \"type\": 39\n                    },\n                    {\n                        \"name\": \"SALDO DISPONIBLE\",\n                        \"length\": 21,\n                        \"type\": 60\n                    },\n                    {\n                        \"name\": \"SALDO A GIRAR\",\n                        \"length\": 21,\n                        \"type\": 60\n                    },\n                    {\n                        \"name\": \"TRANSACCIONAL\",\n                        \"length\": 1,\n                        \"type\": 39\n                    }\n                ]\n            },\n            \"data\": {\n                \"rowsNumber\": 3,\n                \"rows\": [\n                    {\n                        \"columns\": [\n                            {\n                                \"valueObj\": \"200109406127487\",\n                                \"null\": false,\n                                \"value\": \"200109406127487\"\n                            },\n                            {\n                                \"valueObj\": \"A\",\n                                \"null\": false,\n                                \"value\": \"A\"\n                            },\n                            {\n                                \"valueObj\": 4,\n                                \"null\": false,\n                                \"value\": \"4\"\n                            },\n                            {\n                                \"valueObj\": \"CUENTA DE AHORROS\",\n                                \"null\": false,\n                                \"value\": \"CUENTA DE AHORROS\"\n                            },\n                            {\n                                \"valueObj\": 2,\n                                \"null\": false,\n                                \"value\": \"2\"\n                            },\n                            {\n                                \"valueObj\": 1967434,\n                                \"null\": false,\n                                \"value\": \"1967434\"\n                            },\n                            {\n                                \"valueObj\": 3,\n                                \"null\": false,\n                                \"value\": \"3\"\n                            },\n                            {\n                                \"valueObj\": \"CAJA DE AHORROS\",\n                                \"null\": false,\n                                \"value\": \"CAJA DE AHORROS\"\n                            },\n                            {\n                                \"valueObj\": \"T\",\n                                \"null\": false,\n                                \"value\": \"T\"\n                            },\n                            {\n                                \"valueObj\": \"2850001020094061274874\",\n                                \"null\": false,\n                                \"value\": \"2850001020094061274874\"\n                            },\n                            {\n                                \"valueObj\": 32343.53,\n                                \"null\": false,\n                                \"value\": \"32343.5300\"\n                            },\n                            {\n                                \"valueObj\": 32343.53,\n                                \"null\": false,\n                                \"value\": \"32343.5300\"\n                            },\n                            {\n                                \"valueObj\": \"S\",\n                                \"null\": false,\n                                \"value\": \"S\"\n                            }\n                        ],\n                        \"columnsNumber\": 13\n                    },\n                    {\n                        \"columns\": [\n                            {\n                                \"valueObj\": \"267409520821555\",\n                                \"null\": false,\n                                \"value\": \"267409520821555\"\n                            },\n                            {\n                                \"valueObj\": \"B\",\n                                \"null\": false,\n                                \"value\": \"B\"\n                            },\n                            {\n                                \"valueObj\": 4,\n                                \"null\": false,\n                                \"value\": \"4\"\n                            },\n                            {\n                                \"valueObj\": \"CUENTA DE AHORROS\",\n                                \"null\": false,\n                                \"value\": \"CUENTA DE AHORROS\"\n                            },\n                            {\n                                \"valueObj\": 2,\n                                \"null\": false,\n                                \"value\": \"2\"\n                            },\n                            {\n                                \"valueObj\": 1967434,\n                                \"null\": false,\n                                \"value\": \"1967434\"\n                            },\n                            {\n                                \"valueObj\": 3,\n                                \"null\": false,\n                                \"value\": \"3\"\n                            },\n                            {\n                                \"valueObj\": \"CAJA DE AHORROS\",\n                                \"null\": false,\n                                \"value\": \"CAJA DE AHORROS\"\n                            },\n                            {\n                                \"valueObj\": \"T\",\n                                \"null\": false,\n                                \"value\": \"T\"\n                            },\n                            {\n                                \"valueObj\": \"2850674220095208215554\",\n                                \"null\": false,\n                                \"value\": \"2850674220095208215554\"\n                            },\n                            {\n                                \"valueObj\": 31000,\n                                \"null\": false,\n                                \"value\": \"31000.0000\"\n                            },\n                            {\n                                \"valueObj\": 31000,\n                                \"null\": false,\n                                \"value\": \"31000.0000\"\n                            },\n                            {\n                                \"valueObj\": \"S\",\n                                \"null\": false,\n                                \"value\": \"S\"\n                            }\n                        ],\n                        \"columnsNumber\": 13\n                    },\n                    {\n                        \"columns\": [\n                            {\n                                \"valueObj\": \"300109400582121\",\n                                \"null\": false,\n                                \"value\": \"300109400582121\"\n                            },\n                            {\n                                \"valueObj\": \"A\",\n                                \"null\": false,\n                                \"value\": \"A\"\n                            },\n                            {\n                                \"valueObj\": 3,\n                                \"null\": false,\n                                \"value\": \"3\"\n                            },\n                            {\n                                \"valueObj\": \"CUENTA CORRIENTE\",\n                                \"null\": false,\n                                \"value\": \"CUENTA CORRIENTE\"\n                            },\n                            {\n                                \"valueObj\": 80,\n                                \"null\": false,\n                                \"value\": \"80\"\n                            },\n                            {\n                                \"valueObj\": 1967434,\n                                \"null\": false,\n                                \"value\": \"1967434\"\n                            },\n                            {\n                                \"valueObj\": 1,\n                                \"null\": false,\n                                \"value\": \"1\"\n                            },\n                            {\n                                \"valueObj\": \"CUENTAS CORRIENTES\",\n                                \"null\": false,\n                                \"value\": \"CUENTAS CORRIENTES\"\n                            },\n                            {\n                                \"valueObj\": \"T\",\n                                \"null\": false,\n                                \"value\": \"T\"\n                            },\n                            {\n                                \"valueObj\": \"2850001030094005821211\",\n                                \"null\": false,\n                                \"value\": \"2850001030094005821211\"\n                            },\n                            {\n                                \"valueObj\": 8888180.51,\n                                \"null\": false,\n                                \"value\": \"8888180.5100\"\n                            },\n                            {\n                                \"valueObj\": 8888180.51,\n                                \"null\": false,\n                                \"value\": \"8888180.5100\"\n                            },\n                            {\n                                \"valueObj\": \"S\",\n                                \"null\": false,\n                                \"value\": \"S\"\n                            }\n                        ],\n                        \"columnsNumber\": 13\n                    }\n                ]\n            },\n            \"type\": 1\n        }\n    ],\n    \"dataMessageLoaded\": true,\n    \"messages\": [],\n    \"params\": [\n        {\n            \"len\": 0,\n            \"dataType\": 56,\n            \"name\": \"@o_k_total\",\n            \"value\": \"7\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 52,\n            \"name\": \"@o_k_pagina\",\n            \"value\": \"3\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 47,\n            \"name\": \"@o_m_hay_mas\",\n            \"value\": \"S\"\n        }\n    ],\n    \"errors\": [],\n    \"messageListSize\": 0\n}"
+				},
+				{
+					"name": "ultima pagina filas 5",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{environSecurityToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"spName\": \"cob_cuentas..sp_cc_cuenta_TOPAZ\",\r\n    \"params\": [\r\n        {\r\n            \"name\": \"@t_trn\",\r\n            \"dataType\": 52,\r\n            \"value\": \"30272\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"C\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_tipo_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"A\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_opcion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"R\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cliente\",\r\n            \"dataType\":56,\r\n            \"value\":\"1967434\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_filas\",\r\n            \"dataType\":48,\r\n            \"value\":\"5\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cta_banco\",\r\n            \"dataType\":39,\r\n            \"value\":\"2850001020094061274874\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@o_k_total\",\r\n            \"dataType\":56,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_k_pagina\",\r\n            \"dataType\":52,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_m_hay_mas\",\r\n            \"dataType\":47,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ctstest3:9080/CTSRestExecutor/resource/sp/execute",
+							"protocol": "http",
+							"host": [
+								"ctstest3"
+							],
+							"port": "9080",
+							"path": [
+								"CTSRestExecutor",
+								"resource",
+								"sp",
+								"execute"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Aug 2024 16:46:47 GMT"
+						},
+						{
+							"key": "Content-Language",
+							"value": "en-US"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resultSetListSize\": 1,\n    \"returnCode\": 0,\n    \"errorListSize\": 0,\n    \"resultSets\": [\n        {\n            \"metaData\": {\n                \"columnsNumber\": 13,\n                \"columnsMetaData\": [\n                    {\n                        \"name\": \"CUENTA\",\n                        \"length\": 15,\n                        \"type\": 47\n                    },\n                    {\n                        \"name\": \"ESTADO CUENTA\",\n                        \"length\": 1,\n                        \"type\": 47\n                    },\n                    {\n                        \"name\": \"PRODUCTO\",\n                        \"length\": 3,\n                        \"type\": 48\n                    },\n                    {\n                        \"name\": \"DESCRIPCION PRODUCTO\",\n                        \"length\": 64,\n                        \"type\": 39\n                    },\n                    {\n                        \"name\": \"MONEDA\",\n                        \"length\": 3,\n                        \"type\": 48\n                    },\n                    {\n                        \"name\": \"CLIENTE\",\n                        \"length\": 11,\n                        \"type\": 56\n                    },\n                    {\n                        \"name\": \"PRODUCTO BANCARIO\",\n                        \"length\": 3,\n                        \"type\": 48\n                    },\n                    {\n                        \"name\": \"DESC PROD BANCARIO\",\n                        \"length\": 64,\n                        \"type\": 39\n                    },\n                    {\n                        \"name\": \"ROL DEL CLIENTE\",\n                        \"length\": 1,\n                        \"type\": 47\n                    },\n                    {\n                        \"name\": \"CBU\",\n                        \"length\": 22,\n                        \"type\": 39\n                    },\n                    {\n                        \"name\": \"SALDO DISPONIBLE\",\n                        \"length\": 21,\n                        \"type\": 60\n                    },\n                    {\n                        \"name\": \"SALDO A GIRAR\",\n                        \"length\": 21,\n                        \"type\": 60\n                    },\n                    {\n                        \"name\": \"TRANSACCIONAL\",\n                        \"length\": 1,\n                        \"type\": 39\n                    }\n                ]\n            },\n            \"data\": {\n                \"rowsNumber\": 5,\n                \"rows\": [\n                    {\n                        \"columns\": [\n                            {\n                                \"valueObj\": \"300109400582121\",\n                                \"null\": false,\n                                \"value\": \"300109400582121\"\n                            },\n                            {\n                                \"valueObj\": \"A\",\n                                \"null\": false,\n                                \"value\": \"A\"\n                            },\n                            {\n                                \"valueObj\": 3,\n                                \"null\": false,\n                                \"value\": \"3\"\n                            },\n                            {\n                                \"valueObj\": \"CUENTA CORRIENTE\",\n                                \"null\": false,\n                                \"value\": \"CUENTA CORRIENTE\"\n                            },\n                            {\n                                \"valueObj\": 80,\n                                \"null\": false,\n                                \"value\": \"80\"\n                            },\n                            {\n                                \"valueObj\": 1967434,\n                                \"null\": false,\n                                \"value\": \"1967434\"\n                            },\n                            {\n                                \"valueObj\": 1,\n                                \"null\": false,\n                                \"value\": \"1\"\n                            },\n                            {\n                                \"valueObj\": \"CUENTAS CORRIENTES\",\n                                \"null\": false,\n                                \"value\": \"CUENTAS CORRIENTES\"\n                            },\n                            {\n                                \"valueObj\": \"T\",\n                                \"null\": false,\n                                \"value\": \"T\"\n                            },\n                            {\n                                \"valueObj\": \"2850001030094005821211\",\n                                \"null\": false,\n                                \"value\": \"2850001030094005821211\"\n                            },\n                            {\n                                \"valueObj\": 8888180.51,\n                                \"null\": false,\n                                \"value\": \"8888180.5100\"\n                            },\n                            {\n                                \"valueObj\": 8888180.51,\n                                \"null\": false,\n                                \"value\": \"8888180.5100\"\n                            },\n                            {\n                                \"valueObj\": \"S\",\n                                \"null\": false,\n                                \"value\": \"S\"\n                            }\n                        ],\n                        \"columnsNumber\": 13\n                    },\n                    {\n                        \"columns\": [\n                            {\n                                \"valueObj\": \"400109405946508\",\n                                \"null\": false,\n                                \"value\": \"400109405946508\"\n                            },\n                            {\n                                \"valueObj\": \"A\",\n                                \"null\": false,\n                                \"value\": \"A\"\n                            },\n                            {\n                                \"valueObj\": 4,\n                                \"null\": false,\n                                \"value\": \"4\"\n                            },\n                            {\n                                \"valueObj\": \"CUENTA DE AHORROS\",\n                                \"null\": false,\n                                \"value\": \"CUENTA DE AHORROS\"\n                            },\n                            {\n                                \"valueObj\": 80,\n                                \"null\": false,\n                                \"value\": \"80\"\n                            },\n                            {\n                                \"valueObj\": 1967434,\n                                \"null\": false,\n                                \"value\": \"1967434\"\n                            },\n                            {\n                                \"valueObj\": 3,\n                                \"null\": false,\n                                \"value\": \"3\"\n                            },\n                            {\n                                \"valueObj\": \"CAJA DE AHORROS\",\n                                \"null\": false,\n                                \"value\": \"CAJA DE AHORROS\"\n                            },\n                            {\n                                \"valueObj\": \"T\",\n                                \"null\": false,\n                                \"value\": \"T\"\n                            },\n                            {\n                                \"valueObj\": \"2850001040094059465088\",\n                                \"null\": false,\n                                \"value\": \"2850001040094059465088\"\n                            },\n                            {\n                                \"valueObj\": 1999986568.83,\n                                \"null\": false,\n                                \"value\": \"1999986568.8300\"\n                            },\n                            {\n                                \"valueObj\": 1999984668.83,\n                                \"null\": false,\n                                \"value\": \"1999984668.8300\"\n                            },\n                            {\n                                \"valueObj\": \"S\",\n                                \"null\": false,\n                                \"value\": \"S\"\n                            }\n                        ],\n                        \"columnsNumber\": 13\n                    },\n                    {\n                        \"columns\": [\n                            {\n                                \"valueObj\": \"430209545975996\",\n                                \"null\": false,\n                                \"value\": \"430209545975996\"\n                            },\n                            {\n                                \"valueObj\": \"B\",\n                                \"null\": false,\n                                \"value\": \"B\"\n                            },\n                            {\n                                \"valueObj\": 4,\n                                \"null\": false,\n                                \"value\": \"4\"\n                            },\n                            {\n                                \"valueObj\": \"CUENTA DE AHORROS\",\n                                \"null\": false,\n                                \"value\": \"CUENTA DE AHORROS\"\n                            },\n                            {\n                                \"valueObj\": 80,\n                                \"null\": false,\n                                \"value\": \"80\"\n                            },\n                            {\n                                \"valueObj\": 1967434,\n                                \"null\": false,\n                                \"value\": \"1967434\"\n                            },\n                            {\n                                \"valueObj\": 4,\n                                \"null\": false,\n                                \"value\": \"4\"\n                            },\n                            {\n                                \"valueObj\": \"FONDO DE DESEMPLEO\",\n                                \"null\": false,\n                                \"value\": \"FONDO DE DESEMPLEO\"\n                            },\n                            {\n                                \"valueObj\": \"T\",\n                                \"null\": false,\n                                \"value\": \"T\"\n                            },\n                            {\n                                \"valueObj\": \"2850302640095459759968\",\n                                \"null\": false,\n                                \"value\": \"2850302640095459759968\"\n                            },\n                            {\n                                \"valueObj\": 0,\n                                \"null\": false,\n                                \"value\": \"0.0000\"\n                            },\n                            {\n                                \"valueObj\": 0,\n                                \"null\": false,\n                                \"value\": \"0.0000\"\n                            },\n                            {\n                                \"valueObj\": \"N\",\n                                \"null\": false,\n                                \"value\": \"N\"\n                            }\n                        ],\n                        \"columnsNumber\": 13\n                    },\n                    {\n                        \"columns\": [\n                            {\n                                \"valueObj\": \"433009520772802\",\n                                \"null\": false,\n                                \"value\": \"433009520772802\"\n                            },\n                            {\n                                \"valueObj\": \"B\",\n                                \"null\": false,\n                                \"value\": \"B\"\n                            },\n                            {\n                                \"valueObj\": 4,\n                                \"null\": false,\n                                \"value\": \"4\"\n                            },\n                            {\n                                \"valueObj\": \"CUENTA DE AHORROS\",\n                                \"null\": false,\n                                \"value\": \"CUENTA DE AHORROS\"\n                            },\n                            {\n                                \"valueObj\": 80,\n                                \"null\": false,\n                                \"value\": \"80\"\n                            },\n                            {\n                                \"valueObj\": 1967434,\n                                \"null\": false,\n                                \"value\": \"1967434\"\n                            },\n                            {\n                                \"valueObj\": 21,\n                                \"null\": false,\n                                \"value\": \"21\"\n                            },\n                            {\n                                \"valueObj\": \"C. AHORROS PAGO REMUNERACIONES\",\n                                \"null\": false,\n                                \"value\": \"C. AHORROS PAGO REMUNERACIONES\"\n                            },\n                            {\n                                \"valueObj\": \"T\",\n                                \"null\": false,\n                                \"value\": \"T\"\n                            },\n                            {\n                                \"valueObj\": \"2850330940095207728028\",\n                                \"null\": false,\n                                \"value\": \"2850330940095207728028\"\n                            },\n                            {\n                                \"valueObj\": 10200.63,\n                                \"null\": false,\n                                \"value\": \"10200.6300\"\n                            },\n                            {\n                                \"valueObj\": 10200.63,\n                                \"null\": false,\n                                \"value\": \"10200.6300\"\n                            },\n                            {\n                                \"valueObj\": \"S\",\n                                \"null\": false,\n                                \"value\": \"S\"\n                            }\n                        ],\n                        \"columnsNumber\": 13\n                    },\n                    {\n                        \"columns\": [\n                            {\n                                \"valueObj\": \"458409545716212\",\n                                \"null\": false,\n                                \"value\": \"458409545716212\"\n                            },\n                            {\n                                \"valueObj\": \"B\",\n                                \"null\": false,\n                                \"value\": \"B\"\n                            },\n                            {\n                                \"valueObj\": 4,\n                                \"null\": false,\n                                \"value\": \"4\"\n                            },\n                            {\n                                \"valueObj\": \"CUENTA DE AHORROS\",\n                                \"null\": false,\n                                \"value\": \"CUENTA DE AHORROS\"\n                            },\n                            {\n                                \"valueObj\": 80,\n                                \"null\": false,\n                                \"value\": \"80\"\n                            },\n                            {\n                                \"valueObj\": 1967434,\n                                \"null\": false,\n                                \"value\": \"1967434\"\n                            },\n                            {\n                                \"valueObj\": 3,\n                                \"null\": false,\n                                \"value\": \"3\"\n                            },\n                            {\n                                \"valueObj\": \"CAJA DE AHORROS\",\n                                \"null\": false,\n                                \"value\": \"CAJA DE AHORROS\"\n                            },\n                            {\n                                \"valueObj\": \"T\",\n                                \"null\": false,\n                                \"value\": \"T\"\n                            },\n                            {\n                                \"valueObj\": \"2850584840095457162128\",\n                                \"null\": false,\n                                \"value\": \"2850584840095457162128\"\n                            },\n                            {\n                                \"valueObj\": 408952.45,\n                                \"null\": false,\n                                \"value\": \"408952.4500\"\n                            },\n                            {\n                                \"valueObj\": 408952.45,\n                                \"null\": false,\n                                \"value\": \"408952.4500\"\n                            },\n                            {\n                                \"valueObj\": \"S\",\n                                \"null\": false,\n                                \"value\": \"S\"\n                            }\n                        ],\n                        \"columnsNumber\": 13\n                    }\n                ]\n            },\n            \"type\": 1\n        }\n    ],\n    \"dataMessageLoaded\": true,\n    \"messages\": [],\n    \"params\": [\n        {\n            \"len\": 0,\n            \"dataType\": 56,\n            \"name\": \"@o_k_total\",\n            \"value\": \"7\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 52,\n            \"name\": \"@o_k_pagina\",\n            \"value\": \"5\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 47,\n            \"name\": \"@o_m_hay_mas\",\n            \"value\": \"N\"\n        }\n    ],\n    \"errors\": [],\n    \"messageListSize\": 0\n}"
+				},
+				{
+					"name": "consulta con cliente sin cuentas",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{environSecurityToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"spName\": \"cob_cuentas..sp_cc_cuenta_TOPAZ\",\r\n    \"params\": [\r\n        {\r\n            \"name\": \"@t_trn\",\r\n            \"dataType\": 52,\r\n            \"value\": \"30272\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"C\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_tipo_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"A\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_opcion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"R\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cliente\",\r\n            \"dataType\":56,\r\n            \"value\":\"1\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_filas\",\r\n            \"dataType\":48,\r\n            \"value\":\"5\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cta_banco\",\r\n            \"dataType\":39,\r\n            \"value\":\"2850001020094061274874\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@o_k_total\",\r\n            \"dataType\":56,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_k_pagina\",\r\n            \"dataType\":52,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_m_hay_mas\",\r\n            \"dataType\":47,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ctstest3:9080/CTSRestExecutor/resource/sp/execute",
+							"protocol": "http",
+							"host": [
+								"ctstest3"
+							],
+							"port": "9080",
+							"path": [
+								"CTSRestExecutor",
+								"resource",
+								"sp",
+								"execute"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Aug 2024 16:48:31 GMT"
+						},
+						{
+							"key": "Content-Language",
+							"value": "en-US"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resultSetListSize\": 1,\n    \"returnCode\": 0,\n    \"errorListSize\": 0,\n    \"resultSets\": [\n        {\n            \"metaData\": {\n                \"columnsNumber\": 13,\n                \"columnsMetaData\": [\n                    {\n                        \"name\": \"CUENTA\",\n                        \"length\": 15,\n                        \"type\": 47\n                    },\n                    {\n                        \"name\": \"ESTADO CUENTA\",\n                        \"length\": 1,\n                        \"type\": 47\n                    },\n                    {\n                        \"name\": \"PRODUCTO\",\n                        \"length\": 3,\n                        \"type\": 48\n                    },\n                    {\n                        \"name\": \"DESCRIPCION PRODUCTO\",\n                        \"length\": 64,\n                        \"type\": 39\n                    },\n                    {\n                        \"name\": \"MONEDA\",\n                        \"length\": 3,\n                        \"type\": 48\n                    },\n                    {\n                        \"name\": \"CLIENTE\",\n                        \"length\": 11,\n                        \"type\": 56\n                    },\n                    {\n                        \"name\": \"PRODUCTO BANCARIO\",\n                        \"length\": 3,\n                        \"type\": 48\n                    },\n                    {\n                        \"name\": \"DESC PROD BANCARIO\",\n                        \"length\": 64,\n                        \"type\": 39\n                    },\n                    {\n                        \"name\": \"ROL DEL CLIENTE\",\n                        \"length\": 1,\n                        \"type\": 47\n                    },\n                    {\n                        \"name\": \"CBU\",\n                        \"length\": 22,\n                        \"type\": 39\n                    },\n                    {\n                        \"name\": \"SALDO DISPONIBLE\",\n                        \"length\": 21,\n                        \"type\": 60\n                    },\n                    {\n                        \"name\": \"SALDO A GIRAR\",\n                        \"length\": 21,\n                        \"type\": 60\n                    },\n                    {\n                        \"name\": \"TRANSACCIONAL\",\n                        \"length\": 1,\n                        \"type\": 39\n                    }\n                ]\n            },\n            \"data\": {\n                \"rowsNumber\": 0,\n                \"rows\": []\n            },\n            \"type\": 1\n        }\n    ],\n    \"dataMessageLoaded\": true,\n    \"messages\": [],\n    \"params\": [\n        {\n            \"len\": 0,\n            \"dataType\": 56,\n            \"name\": \"@o_k_total\",\n            \"value\": \"0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 52,\n            \"name\": \"@o_k_pagina\",\n            \"value\": \"0\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 47,\n            \"name\": \"@o_m_hay_mas\",\n            \"value\": \"N\"\n        }\n    ],\n    \"errors\": [],\n    \"messageListSize\": 0\n}"
+				},
+				{
+					"name": "con cliente inexistente",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "{{environSecurityToken}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"spName\": \"cob_cuentas..sp_cc_cuenta_TOPAZ\",\r\n    \"params\": [\r\n        {\r\n            \"name\": \"@t_trn\",\r\n            \"dataType\": 52,\r\n            \"value\": \"30272\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"C\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_tipo_operacion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"A\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\": \"@i_opcion\",\r\n            \"dataType\": 47,\r\n            \"value\": \"R\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cliente\",\r\n            \"dataType\":56,\r\n            \"value\":\"7790\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_filas\",\r\n            \"dataType\":48,\r\n            \"value\":\"20\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@i_n_cta_banco\",\r\n            \"dataType\":39,\r\n            \"value\":\"\",\r\n            \"ioType\": 0\r\n        },\r\n        {\r\n            \"name\":\"@o_k_total\",\r\n            \"dataType\":56,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_k_pagina\",\r\n            \"dataType\":52,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        },\r\n        {\r\n            \"name\":\"@o_m_hay_mas\",\r\n            \"dataType\":47,\r\n            \"value\":\"\",\r\n            \"ioType\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://ctstest3:9080/CTSRestExecutor/resource/sp/execute",
+							"protocol": "http",
+							"host": [
+								"ctstest3"
+							],
+							"port": "9080",
+							"path": [
+								"CTSRestExecutor",
+								"resource",
+								"sp",
+								"execute"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Servlet/3.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 16 Aug 2024 19:14:54 GMT"
+						},
+						{
+							"key": "Content-Language",
+							"value": "en-US"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"resultSetListSize\": 0,\n    \"returnCode\": 107613,\n    \"errorListSize\": 0,\n    \"resultSets\": [],\n    \"dataMessageLoaded\": true,\n    \"messages\": [\n        {\n            \"messageText\": \"[sp_cc_cuenta_TOPAZ]  NO EXISTE CLIENTE EN LA CL_ENTE\",\n            \"messageNumber\": 107613,\n            \"type\": 3\n        }\n    ],\n    \"params\": [\n        {\n            \"len\": 0,\n            \"dataType\": 56,\n            \"name\": \"@o_k_total\",\n            \"value\": \"1\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 52,\n            \"name\": \"@o_k_pagina\",\n            \"value\": \"1\"\n        },\n        {\n            \"len\": 0,\n            \"dataType\": 47,\n            \"name\": \"@o_m_hay_mas\",\n            \"value\": \"N\"\n        }\n    ],\n    \"errors\": [],\n    \"messageListSize\": 1\n}"
+				}
+			]
+		}
+	]
+}

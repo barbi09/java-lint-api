@@ -1,29 +1,25 @@
 import { parse } from 'java-parser';
 import { rules } from './rules';
 import { Issue, Operation } from './rules/types';
-import XLSX from 'xlsx';
+import XLSX, { utils } from 'xlsx';
 import { BACKEND_OPERATION_ID_CELL, HTTP_METHOD_PREFIXES, BACKEND_ID_CELL } from './commons/constants';
+import { getUsedConstants } from './commons/utils';
 
 
 export function analyzeJavaFile(code: string, file: string, operationsData: Operation[]): Issue[] {
     const cst = parse(code);
     const issues: Issue[] = [];
     for (const rule of rules) {
-      if(rule.name === "validateUnusedGlobalConstants"){
-        issues.push(...rule(cst, file, globalUsedConstants));
-      }else{
         issues.push(...rule(cst, file, operationsData));
-      }
     }
   
     return issues;
   }
 
-  export function analyzeJavaFileConstants(code: string, file: string, operationsData: Operation[]) : rules[] {
+  export function analyzeJavaFileConstants(code: string, globalUsedConstants: Set<string>, file: string) : Set<string> {
     const cst = parse(code);
-    let globalUsedConstants: Set<string>= new Set<string>();
     
-    globalUsedConstants =  rules.name["validateUnusedGlobalConstants"](cst, file, globalUsedConstants);
+    globalUsedConstants =  getUsedConstants(cst, globalUsedConstants, file)
   
     return globalUsedConstants;
   }

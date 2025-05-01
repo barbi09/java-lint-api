@@ -109,3 +109,5 @@ cuentas-claras-firebase.json
 
 # Temp files
 /temp
+/tmp
+/uploads

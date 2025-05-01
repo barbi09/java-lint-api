@@ -6,10 +6,10 @@ import path from 'path';
 import { parse } from 'java-parser';
 import { globSync } from 'glob';
 import { rimraf } from 'rimraf';
-import { analyzeJavaFile, analyzeExcelFile } from './analyzer';
+import { analyzeJavaFile, analyzeExcelFile, analyzeJavaFileConstants } from './analyzer';
 import { Issue } from './rules/types';
 import { v4 as uuidv4 } from 'uuid';
-import { extractConstantsFromCst, kebabToLowerCamelCase } from './commons/utils';
+import { extractConstantsFromCst, finalizeUnusedConstants, kebabToLowerCamelCase } from './commons/utils';
 
 
 const app = express();
@@ -77,18 +77,22 @@ app.post('/analyze', upload.fields([{ name: 'zip' }, { name: 'xlsx' }]), async (
     }
     
     const javaIssues: Issue[] = [];
-    const globalUsedConstants = new Set<string>();
+    let globalUsedConstants = new Set<string>();
 
 
     for (const filePath of javaFiles) {
       try {
         const code = await fs.readFile(filePath, 'utf8');
-        const issues = analyzeJavaFile(code, path.relative(extractPath, filePath), operationsData, globalUsedConstants);
+        const issues = analyzeJavaFile(code, path.relative(extractPath, filePath), operationsData);
+        globalUsedConstants = analyzeJavaFileConstants(code, globalUsedConstants, path.relative(extractPath, filePath));
         javaIssues.push(...issues);
       } catch (err) {
         console.error(`Failed to parse ${filePath}:`, (err as Error).message);
       }
-    }    
+    }
+    
+    javaIssues.push(...finalizeUnusedConstants(globalConstants, globalUsedConstants));
+    
 
     // ✅ Return final response
     res.json({

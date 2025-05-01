@@ -1,0 +1,1299 @@
+{
+    "resultSetListSize": 1,
+    "returnCode": 0,
+    "errorListSize": 0,
+    "resultSets": [
+        {
+            "metaData": {
+                "columnsNumber": 11,
+                "columnsMetaData": [
+                    {
+                        "name": "CUENTA",
+                        "length": 15,
+                        "type": 47
+                    },
+                    {
+                        "name": "ESTADO CUENTA",
+                        "length": 1,
+                        "type": 47
+                    },
+                    {
+                        "name": "PRODUCTO",
+                        "length": 3,
+                        "type": 48
+                    },
+                    {
+                        "name": "MONEDA",
+                        "length": 3,
+                        "type": 48
+                    },
+                    {
+                        "name": "CLIENTE",
+                        "length": 11,
+                        "type": 56
+                    },
+                    {
+                        "name": "NOMBRE DE LA CUENTA",
+                        "length": 48,
+                        "type": 39
+                    },
+                    {
+                        "name": "PRODUCTO BANCARIO",
+                        "length": 3,
+                        "type": 48
+                    },
+                    {
+                        "name": "ROL DEL CLIENTE",
+                        "length": 1,
+                        "type": 47
+                    },
+                    {
+                        "name": "CBU",
+                        "length": 22,
+                        "type": 39
+                    },
+                    {
+                        "name": "SALDO DISPONIBLE",
+                        "length": 21,
+                        "type": 60
+                    },
+                    {
+                        "name": "TRANSACCIONAL",
+                        "length": 1,
+                        "type": 39
+                    }
+                ]
+            },
+            "data": {
+                "rowsNumber": 20,
+                "rows": [
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "300809400656587",
+                                "null": false,
+                                "value": "300809400656587"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850008930094006565871",
+                                "null": false,
+                                "value": "2850008930094006565871"
+                            },
+                            {
+                                "valueObj": -25411122451768.96,
+                                "null": false,
+                                "value": "-25411122451768.9600"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    },
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "300900000001164",
+                                "null": false,
+                                "value": "300900000001164"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850009630000000011647",
+                                "null": false,
+                                "value": "2850009630000000011647"
+                            },
+                            {
+                                "valueObj": 148449.48,
+                                "null": false,
+                                "value": "148449.4800"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    },
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "300909400657669",
+                                "null": false,
+                                "value": "300909400657669"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850009630094006576691",
+                                "null": false,
+                                "value": "2850009630094006576691"
+                            },
+                            {
+                                "valueObj": -11660.69,
+                                "null": false,
+                                "value": "-11660.6900"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    },
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "301000000001164",
+                                "null": false,
+                                "value": "301000000001164"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850010230000000011647",
+                                "null": false,
+                                "value": "2850010230000000011647"
+                            },
+                            {
+                                "valueObj": -11731.06,
+                                "null": false,
+                                "value": "-11731.0600"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    },
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "301009400657845",
+                                "null": false,
+                                "value": "301009400657845"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850010230094006578451",
+                                "null": false,
+                                "value": "2850010230094006578451"
+                            },
+                            {
+                                "valueObj": -54500,
+                                "null": false,
+                                "value": "-54500.0000"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    },
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "301100000001164",
+                                "null": false,
+                                "value": "301100000001164"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850011930000000011647",
+                                "null": false,
+                                "value": "2850011930000000011647"
+                            },
+                            {
+                                "valueObj": 0,
+                                "null": false,
+                                "value": "0.0000"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    },
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "301109400659689",
+                                "null": false,
+                                "value": "301109400659689"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850011930094006596891",
+                                "null": false,
+                                "value": "2850011930094006596891"
+                            },
+                            {
+                                "valueObj": -3416.66,
+                                "null": false,
+                                "value": "-3416.6600"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    },
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "301200000001164",
+                                "null": false,
+                                "value": "301200000001164"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850012630000000011647",
+                                "null": false,
+                                "value": "2850012630000000011647"
+                            },
+                            {
+                                "valueObj": -1235472.43,
+                                "null": false,
+                                "value": "-1235472.4300"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    },
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "301209400658435",
+                                "null": false,
+                                "value": "301209400658435"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850012630094006584351",
+                                "null": false,
+                                "value": "2850012630094006584351"
+                            },
+                            {
+                                "valueObj": -33582.09,
+                                "null": false,
+                                "value": "-33582.0900"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    },
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "301300000001164",
+                                "null": false,
+                                "value": "301300000001164"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850013330000000011647",
+                                "null": false,
+                                "value": "2850013330000000011647"
+                            },
+                            {
+                                "valueObj": 0,
+                                "null": false,
+                                "value": "0.0000"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    },
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "301309400657887",
+                                "null": false,
+                                "value": "301309400657887"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850013330094006578871",
+                                "null": false,
+                                "value": "2850013330094006578871"
+                            },
+                            {
+                                "valueObj": 5380,
+                                "null": false,
+                                "value": "5380.0000"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    },
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "301400000001164",
+                                "null": false,
+                                "value": "301400000001164"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850014030000000011647",
+                                "null": false,
+                                "value": "2850014030000000011647"
+                            },
+                            {
+                                "valueObj": 6422832.65,
+                                "null": false,
+                                "value": "6422832.6500"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    },
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "301409400657685",
+                                "null": false,
+                                "value": "301409400657685"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850014030094006576851",
+                                "null": false,
+                                "value": "2850014030094006576851"
+                            },
+                            {
+                                "valueObj": 0,
+                                "null": false,
+                                "value": "0.0000"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    },
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "301500000001164",
+                                "null": false,
+                                "value": "301500000001164"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850015730000000011647",
+                                "null": false,
+                                "value": "2850015730000000011647"
+                            },
+                            {
+                                "valueObj": -1863849.54,
+                                "null": false,
+                                "value": "-1863849.5400"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    },
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "301509400657063",
+                                "null": false,
+                                "value": "301509400657063"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850015730094006570631",
+                                "null": false,
+                                "value": "2850015730094006570631"
+                            },
+                            {
+                                "valueObj": -634299.43,
+                                "null": false,
+                                "value": "-634299.4300"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    },
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "301600000001164",
+                                "null": false,
+                                "value": "301600000001164"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850016430000000011647",
+                                "null": false,
+                                "value": "2850016430000000011647"
+                            },
+                            {
+                                "valueObj": -12500,
+                                "null": false,
+                                "value": "-12500.0000"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    },
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "301609400657773",
+                                "null": false,
+                                "value": "301609400657773"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850016430094006577731",
+                                "null": false,
+                                "value": "2850016430094006577731"
+                            },
+                            {
+                                "valueObj": 0,
+                                "null": false,
+                                "value": "0.0000"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    },
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "301700000001164",
+                                "null": false,
+                                "value": "301700000001164"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850017130000000011647",
+                                "null": false,
+                                "value": "2850017130000000011647"
+                            },
+                            {
+                                "valueObj": 0,
+                                "null": false,
+                                "value": "0.0000"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    },
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "301709400657698",
+                                "null": false,
+                                "value": "301709400657698"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850017130094006576981",
+                                "null": false,
+                                "value": "2850017130094006576981"
+                            },
+                            {
+                                "valueObj": -8300,
+                                "null": false,
+                                "value": "-8300.0000"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    },
+                    {
+                        "columns": [
+                            {
+                                "valueObj": "301800000001164",
+                                "null": false,
+                                "value": "301800000001164"
+                            },
+                            {
+                                "valueObj": "A",
+                                "null": false,
+                                "value": "A"
+                            },
+                            {
+                                "valueObj": 3,
+                                "null": false,
+                                "value": "3"
+                            },
+                            {
+                                "valueObj": 80,
+                                "null": false,
+                                "value": "80"
+                            },
+                            {
+                                "valueObj": 7791,
+                                "null": false,
+                                "value": "7791"
+                            },
+                            {
+                                "valueObj": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS",
+                                "null": false,
+                                "value": "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+                            },
+                            {
+                                "valueObj": 8,
+                                "null": false,
+                                "value": "8"
+                            },
+                            {
+                                "valueObj": "T",
+                                "null": false,
+                                "value": "T"
+                            },
+                            {
+                                "valueObj": "2850018830000000011647",
+                                "null": false,
+                                "value": "2850018830000000011647"
+                            },
+                            {
+                                "valueObj": 0,
+                                "null": false,
+                                "value": "0.0000"
+                            },
+                            {
+                                "valueObj": "N",
+                                "null": false,
+                                "value": "N"
+                            }
+                        ],
+                        "columnsNumber": 11
+                    }
+                ]
+            },
+            "type": 1
+        }
+    ],
+    "dataMessageLoaded": true,
+    "messages": [],
+    "params": [
+        {
+            "len": 0,
+            "dataType": 56,
+            "name": "@o_k_total",
+            "value": "912"
+        },
+        {
+            "len": 0,
+            "dataType": 52,
+            "name": "@o_k_pagina",
+            "value": "20"
+        },
+        {
+            "len": 0,
+            "dataType": 47,
+            "name": "@o_m_hay_mas",
+            "value": "S"
+        }
+    ],
+    "errors": [],
+    "messageListSize": 0
+}

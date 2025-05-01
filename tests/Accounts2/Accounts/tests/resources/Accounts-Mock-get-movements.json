@@ -1,0 +1,232 @@
+{
+  "uuid": "c6cea2b2-31a0-4df5-aea2-7c653e9a2611",
+  "lastMigration": 32,
+  "name": "Accounts-get-movements",
+  "endpointPrefix": "",
+  "latency": 0,
+  "port": 3003,
+  "hostname": "",
+  "folders": [],
+  "routes": [
+    {
+      "uuid": "d44f5dda-38b9-41d1-a659-c561f1adecb8",
+      "type": "http",
+      "documentation": "",
+      "method": "get",
+      "endpoint": "CTSRestAuthentication/resource/authenticate/relation",
+      "responses": [
+        {
+          "uuid": "5047c52f-4862-45d8-8480-1baec5a0b57d",
+          "body": "",
+          "latency": 0,
+          "statusCode": 204,
+          "label": "",
+          "headers": [
+            {
+              "key": "Authorization",
+              "value": "Bearer token12"
+            }
+          ],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    },
+    {
+      "uuid": "3e1c70f4-54ea-47c5-a23f-3ef413a12823",
+      "type": "http",
+      "documentation": "",
+      "method": "post",
+      "endpoint": "CTSRestExecutor/resource/sp/execute",
+      "responses": [
+        {
+          "uuid": "675b2234-0b3d-43ad-8437-56d63f0f9fa3",
+          "body": "{\r\n    \"resultSetListSize\": 1,\r\n    \"returnCode\": 0,\r\n    \"errorListSize\": 0,\r\n    \"resultSets\": [\r\n        {\r\n            \"metaData\": {\r\n                \"columnsNumber\": 13,\r\n                \"columnsMetaData\": [\r\n                    {\r\n                        \"name\": \"CUENTA\",\r\n                        \"length\": 15,\r\n                        \"type\": 47\r\n                    },\r\n                    {\r\n                        \"name\": \"ESTADO CUENTA\",\r\n                        \"length\": 1,\r\n                        \"type\": 47\r\n                    },\r\n                    {\r\n                        \"name\": \"PRODUCTO\",\r\n                        \"length\": 3,\r\n                        \"type\": 48\r\n                    },\r\n                    {\r\n                        \"name\": \"DESCRIPCION PRODUCTO\",\r\n                        \"length\": 64,\r\n                        \"type\": 39\r\n                    },\r\n                    {\r\n                        \"name\": \"MONEDA\",\r\n                        \"length\": 3,\r\n                        \"type\": 48\r\n                    },\r\n                    {\r\n                        \"name\": \"CLIENTE\",\r\n                        \"length\": 11,\r\n                        \"type\": 56\r\n                    },\r\n                    {\r\n                        \"name\": \"PRODUCTO BANCARIO\",\r\n                        \"length\": 3,\r\n                        \"type\": 48\r\n                    },\r\n                    {\r\n                        \"name\": \"DESC PROD BANCARIO\",\r\n                        \"length\": 64,\r\n                        \"type\": 39\r\n                    },\r\n                    {\r\n                        \"name\": \"ROL DEL CLIENTE\",\r\n                        \"length\": 1,\r\n                        \"type\": 47\r\n                    },\r\n                    {\r\n                        \"name\": \"CBU\",\r\n                        \"length\": 22,\r\n                        \"type\": 39\r\n                    },\r\n                    {\r\n                        \"name\": \"SALDO DISPONIBLE\",\r\n                        \"length\": 21,\r\n                        \"type\": 60\r\n                    },\r\n                    {\r\n                        \"name\": \"SALDO A GIRAR\",\r\n                        \"length\": 21,\r\n                        \"type\": 60\r\n                    },\r\n                    {\r\n                        \"name\": \"TRANSACCIONAL\",\r\n                        \"length\": 1,\r\n                        \"type\": 39\r\n                    }\r\n                ]\r\n            },\r\n            \"data\": {\r\n                \"rowsNumber\": 3,\r\n                \"rows\": [\r\n                    {\r\n                        \"columns\": [\r\n                            {\r\n                                \"valueObj\": \"200109406127487\",\r\n                                \"null\": false,\r\n                                \"value\": \"200109406127487\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"A\",\r\n                                \"null\": false,\r\n                                \"value\": \"A\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": 4,\r\n                                \"null\": false,\r\n                                \"value\": \"4\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"CUENTA DE AHORROS\",\r\n                                \"null\": false,\r\n                                \"value\": \"CUENTA DE AHORROS\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": 2,\r\n                                \"null\": false,\r\n                                \"value\": \"2\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": 1967434,\r\n                                \"null\": false,\r\n                                \"value\": \"1967434\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": 3,\r\n                                \"null\": false,\r\n                                \"value\": \"3\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"CAJA DE AHORROS\",\r\n                                \"null\": false,\r\n                                \"value\": \"CAJA DE AHORROS\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"T\",\r\n                                \"null\": false,\r\n                                \"value\": \"T\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"2850001020094061274874\",\r\n                                \"null\": false,\r\n                                \"value\": \"2850001020094061274874\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": 32343.53,\r\n                                \"null\": false,\r\n                                \"value\": \"32343.5300\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": 32343.53,\r\n                                \"null\": false,\r\n                                \"value\": \"32343.5300\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"S\",\r\n                                \"null\": false,\r\n                                \"value\": \"S\"\r\n                            }\r\n                        ],\r\n                        \"columnsNumber\": 13\r\n                    },\r\n                    {\r\n                        \"columns\": [\r\n                            {\r\n                                \"valueObj\": \"267409520821555\",\r\n                                \"null\": false,\r\n                                \"value\": \"267409520821555\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"B\",\r\n                                \"null\": false,\r\n                                \"value\": \"B\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": 4,\r\n                                \"null\": false,\r\n                                \"value\": \"4\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"CUENTA DE AHORROS\",\r\n                                \"null\": false,\r\n                                \"value\": \"CUENTA DE AHORROS\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": 2,\r\n                                \"null\": false,\r\n                                \"value\": \"2\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": 1967434,\r\n                                \"null\": false,\r\n                                \"value\": \"1967434\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": 3,\r\n                                \"null\": false,\r\n                                \"value\": \"3\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"CAJA DE AHORROS\",\r\n                                \"null\": false,\r\n                                \"value\": \"CAJA DE AHORROS\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"T\",\r\n                                \"null\": false,\r\n                                \"value\": \"T\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"2850674220095208215554\",\r\n                                \"null\": false,\r\n                                \"value\": \"2850674220095208215554\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": 31000,\r\n                                \"null\": false,\r\n                                \"value\": \"31000.0000\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": 31000,\r\n                                \"null\": false,\r\n                                \"value\": \"31000.0000\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"S\",\r\n                                \"null\": false,\r\n                                \"value\": \"S\"\r\n                            }\r\n                        ],\r\n                        \"columnsNumber\": 13\r\n                    },\r\n                    {\r\n                        \"columns\": [\r\n                            {\r\n                                \"valueObj\": \"300109400582121\",\r\n                                \"null\": false,\r\n                                \"value\": \"300109400582121\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"A\",\r\n                                \"null\": false,\r\n                                \"value\": \"A\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": 3,\r\n                                \"null\": false,\r\n                                \"value\": \"3\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"CUENTA CORRIENTE\",\r\n                                \"null\": false,\r\n                                \"value\": \"CUENTA CORRIENTE\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": 80,\r\n                                \"null\": false,\r\n                                \"value\": \"80\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": 1967434,\r\n                                \"null\": false,\r\n                                \"value\": \"1967434\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": 1,\r\n                                \"null\": false,\r\n                                \"value\": \"1\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"CUENTAS CORRIENTES\",\r\n                                \"null\": false,\r\n                                \"value\": \"CUENTAS CORRIENTES\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"T\",\r\n                                \"null\": false,\r\n                                \"value\": \"T\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"2850001030094005821211\",\r\n                                \"null\": false,\r\n                                \"value\": \"2850001030094005821211\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": 8888180.51,\r\n                                \"null\": false,\r\n                                \"value\": \"8888180.5100\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": 8888180.51,\r\n                                \"null\": false,\r\n                                \"value\": \"8888180.5100\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"S\",\r\n                                \"null\": false,\r\n                                \"value\": \"S\"\r\n                            }\r\n                        ],\r\n                        \"columnsNumber\": 13\r\n                    }\r\n                ]\r\n            },\r\n            \"type\": 1\r\n        }\r\n    ],\r\n    \"dataMessageLoaded\": true,\r\n    \"messages\": [\r\n    ],\r\n    \"params\": [\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 56,\r\n            \"name\": \"@o_k_total\",\r\n            \"value\": \"7\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 52,\r\n            \"name\": \"@o_k_pagina\",\r\n            \"value\": \"3\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 47,\r\n            \"name\": \"@o_m_hay_mas\",\r\n            \"value\": \"S\"\r\n        }\r\n    ],\r\n    \"errors\": [\r\n    ],\r\n    \"messageListSize\": \"0\"\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "- Response ok",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "9aa41715-ed45-4756-aaad-e5e93591abe8",
+          "body": "{\r\n    \"resultSetListSize\": 0,\r\n    \"returnCode\": -1,\r\n    \"errorListSize\": 0,\r\n    \"resultSets\": [],\r\n    \"dataMessageLoaded\": true,\r\n    \"messages\": [\r\n      {\r\n        \"messageText\": \"Parámetro: @i_cuenta, DataType: 56, DataLen: 10, Valor: 9413530129,  Tipo de Dato Incorrecto / Valor Máximo excedido\",\r\n        \"messageNumber\": 80102,\r\n        \"type\": 3\r\n      }\r\n    ],\r\n    \"params\": [\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 39,\r\n            \"name\": \"@o_n_cbu\",\r\n            \"value\": \"2850008930000000011647\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 48,\r\n            \"name\": \"@o_c_producto\",\r\n            \"value\": \"3\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 60,\r\n            \"name\": \"@o_i_remesas\",\r\n            \"value\": \"-94129.26000000001\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 60,\r\n            \"name\": \"@o_i_24h\",\r\n            \"value\": \"203782.18\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 60,\r\n            \"name\": \"@o_i_disponible\",\r\n            \"value\": \"0.0\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 60,\r\n            \"name\": \"@o_i_saldo_contable\",\r\n            \"value\": \"283644.56\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 60,\r\n            \"name\": \"@o_i_saldo_para_girar\",\r\n            \"value\": \"-94129.26000000001\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 60,\r\n            \"name\": \"@o_i_bloqueo_valores\",\r\n            \"value\": \"0.0\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 60,\r\n            \"name\": \"@o_i_48h\",\r\n            \"value\": \"0.0\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 60,\r\n            \"name\": \"@o_i_valores_suspenso\",\r\n            \"value\": \"0.0\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 60,\r\n            \"name\": \"@o_i_acuerdos\",\r\n            \"value\": \"0.0\"\r\n        }\r\n    ],\r\n    \"errors\": [],\r\n    \"messageListSize\": 0\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "- Response error (returnCode -1)",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "4abd606f-35c0-4b98-869b-bdbc53ea8dea",
+          "body": "{\r\n    \"resultSetListSize\": 0,\r\n    \"returnCode\": 0,\r\n    \"errorListSize\": 0,\r\n    \"resultSets\": [],\r\n    \"dataMessageLoaded\": true,\r\n    \"messages\": [],\r\n    \"params\": [],\r\n    \"errors\": [],\r\n    \"messageListSize\": 0\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "- Sin data",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "fc11f633-b498-4552-8ef2-c3fcadf22cfa",
+          "body": "{\r\n    \"resultSetListSize\": 0,\r\n    \"returnCode\": 0,\r\n    \"errorListSize\": 0,\r\n    \"resultSets\": [],\r\n    \"dataMessageLoaded\": true,\r\n    \"messages\": [\r\n      {\r\n        \"messageText\": \"Parámetro: @i_cuenta, DataType: 56, DataLen: 10, Valor: 9413530129,  Tipo de Dato Incorrecto / Valor Máximo excedido\",\r\n        \"messageNumber\": 80102,\r\n        \"type\": 3\r\n      }\r\n    ],\r\n    \"params\": [],\r\n    \"errors\": [],\r\n    \"messageListSize\": 0\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "- Response error (returnCode 0)",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "9c4d93c9-7acd-4820-91c3-64abcb324796",
+          "body": "{\r\n          \"messages\": [],\r\n          \"resultSets\": [\r\n            {\r\n              \"data\": {\r\n                \"rowsNumber\": 2,\r\n                \"rows\": [\r\n                  {\r\n                    \"columnsNumber\": 16,\r\n                    \"columns\": [\r\n                      {\r\n                        \"valueObj\": \"20240227\",\r\n                        \"value\": \"20240227\",\r\n                        \"null\": false\r\n                      },\r\n                      {\r\n                        \"valueObj\": 595041863,\r\n                        \"value\": \"595041863\",\r\n                        \"null\": false\r\n                      },\r\n                      {\r\n                        \"null\": false,\r\n                        \"value\": \"540\",\r\n                        \"valueObj\": 540\r\n                      },\r\n                      {\r\n                        \"valueObj\": \"2027528858 - Numero de Operacion\",\r\n                        \"null\": false,\r\n                        \"value\": \"2027528858 - Numero de Operacion\"\r\n                      },\r\n                      {\r\n                        \"value\": \"C\",\r\n                        \"valueObj\": \"C\",\r\n                        \"null\": false\r\n                      },\r\n                      {\r\n                        \"value\": \"500.0000\",\r\n                        \"valueObj\": 500,\r\n                        \"null\": false\r\n                      },\r\n                      {\r\n                        \"value\": \"4334\",\r\n                        \"valueObj\": \"4334\",\r\n                        \"null\": false\r\n                      },\r\n                      {\r\n                        \"value\": \"0\",\r\n                        \"null\": false,\r\n                        \"valueObj\": 0\r\n                      },\r\n                      {\r\n                        \"null\": true\r\n                      },\r\n                      {\r\n                        \"null\": false,\r\n                        \"valueObj\": \"CASA CENTRAL\",\r\n                        \"value\": \"CASA CENTRAL\"\r\n                      },\r\n                      {\r\n                        \"valueObj\": \"20240227  1:47 PM\",\r\n                        \"value\": \"20240227  1:47 PM\",\r\n                        \"null\": false\r\n                      },\r\n                      {\r\n                        \"null\": false,\r\n                        \"value\": \"261104154\",\r\n                        \"valueObj\": 261104154\r\n                      },\r\n                      {\r\n                        \"null\": false,\r\n                        \"value\": \"ctstasit\",\r\n                        \"valueObj\": \"ctstasit\"\r\n                      },\r\n                      {\r\n                        \"null\": false,\r\n                        \"value\": \"4334\",\r\n                        \"valueObj\": \"4334\"\r\n                      },\r\n                      {\r\n                        \"null\": true\r\n                      },\r\n                      {\r\n                        \"valueObj\": 3,\r\n                        \"value\": \"3\",\r\n                        \"null\": false\r\n                      }\r\n                    ]\r\n                  },\r\n                  {\r\n                    \"columnsNumber\": 16,\r\n                    \"columns\": [\r\n                      {\r\n                        \"value\": \"20240227\",\r\n                        \"null\": false,\r\n                        \"valueObj\": \"20240227\"\r\n                      },\r\n                      {\r\n                        \"value\": \"594865273\",\r\n                        \"valueObj\": 594865273,\r\n                        \"null\": false\r\n                      },\r\n                      {\r\n                        \"value\": \"782\",\r\n                        \"valueObj\": 782,\r\n                        \"null\": false\r\n                      },\r\n                      {\r\n                        \"null\": false,\r\n                        \"value\": \"CREDITO VISA OCT\",\r\n                        \"valueObj\": \"CREDITO VISA OCT\"\r\n                      },\r\n                      {\r\n                        \"value\": \"C\",\r\n                        \"valueObj\": \"C\",\r\n                        \"null\": false\r\n                      },\r\n                      {\r\n                        \"value\": \"850.0000\",\r\n                        \"valueObj\": 850,\r\n                        \"null\": false\r\n                      },\r\n                      {\r\n                        \"value\": \"4350\",\r\n                        \"valueObj\": \"4350\",\r\n                        \"null\": false\r\n                      },\r\n                      {\r\n                        \"value\": \"1\",\r\n                        \"null\": false,\r\n                        \"valueObj\": 1\r\n                      },\r\n                      {\r\n                        \"null\": true\r\n                      },\r\n                      {\r\n                        \"null\": false,\r\n                        \"value\": \"PLAZA POSADAS\",\r\n                        \"valueObj\": \"PLAZA POSADAS\"\r\n                      },\r\n                      {\r\n                        \"valueObj\": \"20240227 11:17 AM\",\r\n                        \"value\": \"20240227 11:17 AM\",\r\n                        \"null\": false\r\n                      },\r\n                      {\r\n                        \"value\": \"555588\",\r\n                        \"valueObj\": 555588,\r\n                        \"null\": false\r\n                      },\r\n                      {\r\n                        \"valueObj\": \"host24\",\r\n                        \"value\": \"host24\",\r\n                        \"null\": false\r\n                      },\r\n                      {\r\n                        \"valueObj\": \"4350\",\r\n                        \"null\": false,\r\n                        \"value\": \"4350\"\r\n                      },\r\n                      {\r\n                        \"null\": true\r\n                      },\r\n                      {\r\n                        \"valueObj\": 4,\r\n                        \"value\": \"4\",\r\n                        \"null\": false\r\n                      }\r\n                    ]\r\n                  }\r\n                ]\r\n              },\r\n              \"type\": 1,\r\n              \"metaData\": {\r\n                \"columnsNumber\": 16,\r\n                \"columnsMetaData\": [\r\n                  {\r\n                    \"name\": \"FECHA\",\r\n                    \"length\": 12,\r\n                    \"type\": 39\r\n                  },\r\n                  {\r\n                    \"type\": 56,\r\n                    \"length\": 11,\r\n                    \"name\": \"SECUENCIAL\"\r\n                  },\r\n                  {\r\n                    \"name\": \"OFI_COD\",\r\n                    \"type\": 52,\r\n                    \"length\": 6\r\n                  },\r\n                  {\r\n                    \"length\": 64,\r\n                    \"type\": 39,\r\n                    \"name\": \"TRANSACCION\"\r\n                  },\r\n                  {\r\n                    \"length\": 1,\r\n                    \"name\": \"D_C\",\r\n                    \"type\": 47\r\n                  },\r\n                  {\r\n                    \"type\": 60,\r\n                    \"length\": 21,\r\n                    \"name\": \"VALOR\"\r\n                  },\r\n                  {\r\n                    \"type\": 39,\r\n                    \"length\": 10,\r\n                    \"name\": \"CHEQUE_CAUSA\"\r\n                  },\r\n                  {\r\n                    \"length\": 11,\r\n                    \"type\": 56,\r\n                    \"name\": \"COD_ALTERNO\"\r\n                  },\r\n                  {\r\n                    \"type\": 56,\r\n                    \"name\": \"SEC_HIS\",\r\n                    \"length\": 11\r\n                  },\r\n                  {\r\n                    \"length\": 64,\r\n                    \"name\": \"OFICINA\",\r\n                    \"type\": 39\r\n                  },\r\n                  {\r\n                    \"type\": 39,\r\n                    \"name\": \"HORA\",\r\n                    \"length\": 20\r\n                  },\r\n                  {\r\n                    \"type\": 56,\r\n                    \"length\": 11,\r\n                    \"name\": \"REFERENCIA_NRO\"\r\n                  },\r\n                  {\r\n                    \"name\": \"USUARIO\",\r\n                    \"length\": 30,\r\n                    \"type\": 39\r\n                  },\r\n                  {\r\n                    \"length\": 10,\r\n                    \"name\": \"COD_CAUSA\",\r\n                    \"type\": 39\r\n                  },\r\n                  {\r\n                    \"name\": \"CUIT\",\r\n                    \"length\": 11,\r\n                    \"type\": 39\r\n                  },\r\n                  {\r\n                    \"type\": 56,\r\n                    \"name\": \"SEC_UNICO\",\r\n                    \"length\": 11\r\n                  }\r\n                ]\r\n              }\r\n            }\r\n          ],\r\n          \"errors\": [],\r\n          \"resultSetListSize\": 1,\r\n          \"returnCode\": 0,\r\n          \"messageListSize\": 0,\r\n          \"params\": [],\r\n          \"dataMessageLoaded\": true,\r\n          \"errorListSize\": 0\r\n        }",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Response Ok 2",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "2ed5a041-e59f-439f-8be7-2fbca31222a5",
+          "body": "{\r\n    \"resultSetListSize\": 0,\r\n    \"returnCode\": 5,\r\n    \"errorListSize\": 0,\r\n    \"resultSets\": [],\r\n    \"dataMessageLoaded\": true,\r\n    \"messages\": [\r\n        {\r\n            \"messageText\": \"Producto bancario deshabilitado, consulte al Administrador del Sistema  sp:cob_cuentas-sp_cc_cuenta, trn: 30420,user: dzampier, role: 1\",\r\n            \"messageNumber\": 40003,\r\n            \"type\": 3\r\n        }\r\n    ],\r\n    \"params\": [],\r\n    \"errors\": [],\r\n    \"messageListSize\": 1\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "- Response error 40003 ",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": false,
+          "crudKey": "id",
+          "callbacks": []
+        },
+        {
+          "uuid": "a3471837-f4b0-414b-9913-920074ad438f",
+          "body": "{\r\n    \"messages\": [\r\n    ],\r\n    \"resultSets\": [\r\n        {\r\n            \"data\": {\r\n                \"rowsNumber\": 2,\r\n                \"rows\": [\r\n                    {\r\n                        \"columnsNumber\": 16,\r\n                        \"columns\": [\r\n                            {\r\n                                \"valueObj\": \"20240227\",\r\n                                \"value\": \"20240227\",\r\n                                \"null\": false\r\n                            },\r\n                            {\r\n                                \"valueObj\": 595041863,\r\n                                \"value\": \"595041863\",\r\n                                \"null\": false\r\n                            },\r\n                            {\r\n                                \"null\": false,\r\n                                \"value\": \"540\",\r\n                                \"valueObj\": 540\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"2027528858 - Numero de Operacion\",\r\n                                \"null\": false,\r\n                                \"value\": \"2027528858 - Numero de Operacion\"\r\n                            },\r\n                            {\r\n                                \"value\": \"C\",\r\n                                \"valueObj\": \"C\",\r\n                                \"null\": false\r\n                            },\r\n                            {\r\n                                \"value\": \"500.0000\",\r\n                                \"valueObj\": 500,\r\n                                \"null\": false\r\n                            },\r\n                            {\r\n                                \"value\": \"4334\",\r\n                                \"valueObj\": \"4334\",\r\n                                \"null\": false\r\n                            },\r\n                            {\r\n                                \"value\": \"0\",\r\n                                \"null\": false,\r\n                                \"valueObj\": 0\r\n                            },\r\n                            {\r\n                                \"null\": true\r\n                            },\r\n                            {\r\n                                \"null\": false,\r\n                                \"valueObj\": \"CASA CENTRAL\",\r\n                                \"value\": \"CASA CENTRAL\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"20240227  1:47 PM\",\r\n                                \"value\": \"20240227  1:47 PM\",\r\n                                \"null\": false\r\n                            },\r\n                            {\r\n                                \"null\": false,\r\n                                \"value\": \"261104154\",\r\n                                \"valueObj\": 261104154\r\n                            },\r\n                            {\r\n                                \"null\": false,\r\n                                \"value\": \"ctstasit\",\r\n                                \"valueObj\": \"ctstasit\"\r\n                            },\r\n                            {\r\n                                \"null\": false,\r\n                                \"value\": \"4334\",\r\n                                \"valueObj\": \"4334\"\r\n                            },\r\n                            {\r\n                                \"null\": true\r\n                            },\r\n                            {\r\n                                \"valueObj\": 3,\r\n                                \"value\": \"3\",\r\n                                \"null\": false\r\n                            }\r\n                        ]\r\n                    },\r\n                    {\r\n                        \"columnsNumber\": 16,\r\n                        \"columns\": [\r\n                            {\r\n                                \"value\": \"20240227\",\r\n                                \"null\": false,\r\n                                \"valueObj\": \"20240227\"\r\n                            },\r\n                            {\r\n                                \"value\": \"594865273\",\r\n                                \"valueObj\": 594865273,\r\n                                \"null\": false\r\n                            },\r\n                            {\r\n                                \"value\": \"782\",\r\n                                \"valueObj\": 782,\r\n                                \"null\": false\r\n                            },\r\n                            {\r\n                                \"null\": false,\r\n                                \"value\": \"CREDITO VISA OCT\",\r\n                                \"valueObj\": \"CREDITO VISA OCT\"\r\n                            },\r\n                            {\r\n                                \"value\": \"C\",\r\n                                \"valueObj\": \"C\",\r\n                                \"null\": false\r\n                            },\r\n                            {\r\n                                \"value\": \"850.0000\",\r\n                                \"valueObj\": 850,\r\n                                \"null\": false\r\n                            },\r\n                            {\r\n                                \"value\": \"4350\",\r\n                                \"valueObj\": \"4350\",\r\n                                \"null\": false\r\n                            },\r\n                            {\r\n                                \"value\": \"1\",\r\n                                \"null\": false,\r\n                                \"valueObj\": 1\r\n                            },\r\n                            {\r\n                                \"null\": true\r\n                            },\r\n                            {\r\n                                \"null\": false,\r\n                                \"value\": \"PLAZA POSADAS\",\r\n                                \"valueObj\": \"PLAZA POSADAS\"\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"20240227 11:17 AM\",\r\n                                \"value\": \"20240227 11:17 AM\",\r\n                                \"null\": false\r\n                            },\r\n                            {\r\n                                \"value\": \"555588\",\r\n                                \"valueObj\": 555588,\r\n                                \"null\": false\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"host24\",\r\n                                \"value\": \"host24\",\r\n                                \"null\": false\r\n                            },\r\n                            {\r\n                                \"valueObj\": \"4350\",\r\n                                \"null\": false,\r\n                                \"value\": \"4350\"\r\n                            },\r\n                            {\r\n                                \"null\": true\r\n                            },\r\n                            {\r\n                                \"valueObj\": 4,\r\n                                \"value\": \"4\",\r\n                                \"null\": false\r\n                            }\r\n                        ]\r\n                    }\r\n                ]\r\n            },\r\n            \"type\": 1,\r\n            \"metaData\": {\r\n                \"columnsNumber\": 16,\r\n                \"columnsMetaData\": [\r\n                    {\r\n                        \"name\": \"FECHA\",\r\n                        \"length\": 12,\r\n                        \"type\": 39\r\n                    },\r\n                    {\r\n                        \"type\": 56,\r\n                        \"length\": 11,\r\n                        \"name\": \"SECUENCIAL\"\r\n                    },\r\n                    {\r\n                        \"name\": \"OFI_COD\",\r\n                        \"type\": 52,\r\n                        \"length\": 6\r\n                    },\r\n                    {\r\n                        \"length\": 64,\r\n                        \"type\": 39,\r\n                        \"name\": \"TRANSACCION\"\r\n                    },\r\n                    {\r\n                        \"length\": 1,\r\n                        \"name\": \"D_C\",\r\n                        \"type\": 47\r\n                    },\r\n                    {\r\n                        \"type\": 60,\r\n                        \"length\": 21,\r\n                        \"name\": \"VALOR\"\r\n                    },\r\n                    {\r\n                        \"type\": 39,\r\n                        \"length\": 10,\r\n                        \"name\": \"CHEQUE_CAUSA\"\r\n                    },\r\n                    {\r\n                        \"length\": 11,\r\n                        \"type\": 56,\r\n                        \"name\": \"COD_ALTERNO\"\r\n                    },\r\n                    {\r\n                        \"type\": 56,\r\n                        \"name\": \"SEC_HIS\",\r\n                        \"length\": 11\r\n                    },\r\n                    {\r\n                        \"length\": 64,\r\n                        \"name\": \"OFICINA\",\r\n                        \"type\": 39\r\n                    },\r\n                    {\r\n                        \"type\": 39,\r\n                        \"name\": \"HORA\",\r\n                        \"length\": 20\r\n                    },\r\n                    {\r\n                        \"type\": 56,\r\n                        \"length\": 11,\r\n                        \"name\": \"REFERENCIA_NRO\"\r\n                    },\r\n                    {\r\n                        \"name\": \"USUARIO\",\r\n                        \"length\": 30,\r\n                        \"type\": 39\r\n                    },\r\n                    {\r\n                        \"length\": 10,\r\n                        \"name\": \"COD_CAUSA\",\r\n                        \"type\": 39\r\n                    },\r\n                    {\r\n                        \"name\": \"CUIT\",\r\n                        \"length\": 11,\r\n                        \"type\": 39\r\n                    },\r\n                    {\r\n                        \"type\": 56,\r\n                        \"name\": \"SEC_UNICO\",\r\n                        \"length\": 11\r\n                    }\r\n                ]\r\n            }\r\n        }\r\n    ],\r\n    \"errors\": [\r\n    ],\r\n    \"resultSetListSize\": 1,\r\n    \"returnCode\": 0,\r\n    \"messageListSize\": 0,\r\n    \"params\": [\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 56,\r\n            \"name\": \"@o_k_total\",\r\n            \"value\": \"7\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 52,\r\n            \"name\": \"@o_k_pagina\",\r\n            \"value\": \"3\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 47,\r\n            \"name\": \"@o_m_hay_mas\",\r\n            \"value\": \"S\"\r\n        },\r\n        {\r\n            \"len\": 0,\r\n            \"dataType\": 56,\r\n            \"name\": \"@o_n_ultimo_id\",\r\n            \"value\": \"2\"\r\n        }\r\n    ],\r\n    \"dataMessageLoaded\": true,\r\n    \"errorListSize\": 0\r\n}",
+          "latency": 0,
+          "statusCode": 200,
+          "label": "Reponse Ok 3 Mix",
+          "headers": [],
+          "bodyType": "INLINE",
+          "filePath": "",
+          "databucketID": "",
+          "sendFileAsBody": false,
+          "rules": [],
+          "rulesOperator": "OR",
+          "disableTemplating": false,
+          "fallbackTo404": false,
+          "default": true,
+          "crudKey": "id",
+          "callbacks": []
+        }
+      ],
+      "responseMode": null
+    }
+  ],
+  "rootChildren": [
+    {
+      "type": "route",
+      "uuid": "d44f5dda-38b9-41d1-a659-c561f1adecb8"
+    },
+    {
+      "type": "route",
+      "uuid": "3e1c70f4-54ea-47c5-a23f-3ef413a12823"
+    }
+  ],
+  "proxyMode": false,
+  "proxyHost": "",
+  "proxyRemovePrefix": false,
+  "tlsOptions": {
+    "enabled": false,
+    "type": "CERT",
+    "pfxPath": "",
+    "certPath": "",
+    "keyPath": "",
+    "caPath": "",
+    "passphrase": ""
+  },
+  "cors": true,
+  "headers": [
+    {
+      "key": "Content-Type",
+      "value": "application/json"
+    }
+  ],
+  "proxyReqHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "proxyResHeaders": [
+    {
+      "key": "",
+      "value": ""
+    }
+  ],
+  "data": [],
+  "callbacks": []
+}
