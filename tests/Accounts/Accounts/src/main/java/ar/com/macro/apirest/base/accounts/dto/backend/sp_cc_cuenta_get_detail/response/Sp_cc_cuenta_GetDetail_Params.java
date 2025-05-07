@@ -50,10 +50,10 @@ public class Sp_cc_cuenta_GetDetail_Params implements Serializable {
     private String oDProducto;
 
     @JsonProperty("@o_c_prod_banc")
-    private Integer oCProdBanc;
+    private Integer o_CProdBanc;
 
     @JsonProperty("@o_d_prod_banc")
-    private String oDProdBanc;
+    private String PDProdBanc;
 
     @JsonProperty("@o_c_estado")
     private String oCEstado;

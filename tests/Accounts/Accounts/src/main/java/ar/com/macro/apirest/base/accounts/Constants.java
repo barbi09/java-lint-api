@@ -27,6 +27,8 @@ public class Constants {
     public static final Integer CTS_REST_EXECUTOR_DATA_TYPE_INT = 56;
     public static final Integer CTS_REST_EXECUTOR_DATA_TYPE_MONEY = 60;
     public static final Integer CTS_REST_EXECUTOR_DATA_TYPE_SMALLDATETIME = 61;
+    public static final Integer pepe = 61;
+    public static final Integer PEPE_pe = 61;
 
     public static final Integer CTS_REST_EXECUTOR_DATA_VALUE_IKREGISTROS= 50;
 

@@ -8,7 +8,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor
-@Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Sp_cc_cuenta_GetList_Response implements Serializable {
 

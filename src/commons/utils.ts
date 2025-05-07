@@ -5,7 +5,7 @@ export function kebabToLowerCamelCase(input: string): string {
   return input.replace(/-([a-z])/g, (_, char: string) => char.toUpperCase());
 }
 
-export function extractConstantsFromCst(cst: any): { name: string; line: number }[] {
+export function extractConstantsFromCst(cst: any, issues: Issue[]): { name: string; line: number }[] {
   const constants: { name: string; line: number }[] = [];
 
   function walk(node: any) {
@@ -27,7 +27,17 @@ export function extractConstantsFromCst(cst: any): { name: string; line: number 
           name: nameNode.image,
           line: nameNode.startLine || 1
         });
+
+        if (!isUpperSnakeCase(nameNode.image)) {
+          issues.push({
+            rule: 'Validate Constants Name',
+            file: 'Constants.java',
+            line: nameNode.startLine || 1,
+            message: `Constant "${nameNode.image}" does not match expected format.`,
+          });
+        }
       }
+
     }
 
     // Walk children
@@ -41,6 +51,11 @@ export function extractConstantsFromCst(cst: any): { name: string; line: number 
 
   walk(cst);
   return constants;
+}
+
+export function isUpperSnakeCase(name: string): boolean {
+  const upperSnakeCaseRegex = /^[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)*$/;
+  return upperSnakeCaseRegex.test(name);
 }
 
 export function getUsedConstants(cst: any, globalUsedConstants: Set<string>, filePath: string): Set<string> {
@@ -78,8 +93,6 @@ export function getUsedConstants(cst: any, globalUsedConstants: Set<string>, fil
 }
 
 
-
-
 export function finalizeUnusedConstants(globalConstants: { name: string; line: number }[], usedConstants: Set<string>): Issue[] {
   const javaIssues: Issue[] = [];
 
@@ -95,6 +108,8 @@ export function finalizeUnusedConstants(globalConstants: { name: string; line: n
   }
 
   return javaIssues;
+}
 
-
+export function isLowerCamelCase(name: string): boolean {
+  return /^[a-z][a-zA-Z0-9]*$/.test(name);
 }

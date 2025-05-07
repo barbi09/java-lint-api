@@ -1,4 +1,4 @@
-package ar.com.macro.apirest.base.accounts.dto.backend.sp_cc_cuenta_get_balance.response;
+package ar.com.macro.apirest.base.accounts.dto.backend.sp_cc_cuenta_get_balance.request;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -8,10 +8,13 @@ import lombok.NoArgsConstructor;
 import java.io.Serial;
 import java.io.Serializable;
 
-@Data
+@XmlRootElement(name = "Envelope", namespace = "http://schemas.xmlsoap.org/soap/envelope/")
+@XmlAccessorType(XmlAccessType.FIELD)
+@Builder
 @NoArgsConstructor
-@JsonIgnoreProperties(ignoreUnknown = true)
-public class Sp_cc_cuenta_GetBalance_Params implements Serializable {
+@AllArgsConstructor
+@Data
+public class Sp_cc_cuenta_GetBalance_Params_request implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 6358203721285682433L;
@@ -35,10 +38,10 @@ public class Sp_cc_cuenta_GetBalance_Params implements Serializable {
     private String oISaldoContable;
 
     @JsonProperty("@o_i_saldo_para_girar")
-    private String oISaldo_ParaGirar;
+    private String oISaldoParaGirar;
 
     @JsonProperty("@o_i_bloqueo_valores")
-    private String OIBloqueo-Valores;
+    private String oIBloqueoValores;
 
     @JsonProperty("@o_i_48h")
     private String oI48h;

@@ -1,11 +1,6 @@
 import { Issue, Operation, Rule } from './types';
 import { CONTROLLER_SERVICES_CLASSES, WEB_CLIENT_CLASSES, METHODS_EXCLUDED, RESPONSE_HANDLER_CLASSES, RESPONSE_MAPPER_CLASSES } from '../commons/constants';
-import { kebabToLowerCamelCase } from '../commons/utils';
-
-
-function isLowerCamelCase(name: string): boolean {
-  return /^[a-z][a-zA-Z0-9]*$/.test(name);
-}
+import { kebabToLowerCamelCase, isLowerCamelCase } from '../commons/utils';
 
 export const validateNameMethods: Rule = (cst: any, file: string,  operations: Operation[] ): Issue[] => {
   const issues: Issue[] = [];

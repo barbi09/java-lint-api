@@ -69,14 +69,15 @@ app.post('/analyze', upload.fields([{ name: 'zip' }, { name: 'xlsx' }]), async (
 
     const constantsFilePath = javaFiles.find(p => p.endsWith('Constants.java'));
     let globalConstants: { name: string; line: number }[] = [];
+    const javaIssues: Issue[] = [];
 
     if (constantsFilePath) {
       const constantsCode = await fs.readFile(constantsFilePath, 'utf8');
       const constantsCst = parse(constantsCode); // using java-parser
-      globalConstants = extractConstantsFromCst(constantsCst); // <-- your util function
+      globalConstants = extractConstantsFromCst(constantsCst, javaIssues); // <-- your util function
     }
     
-    const javaIssues: Issue[] = [];
+    
     let globalUsedConstants = new Set<string>();
 
 

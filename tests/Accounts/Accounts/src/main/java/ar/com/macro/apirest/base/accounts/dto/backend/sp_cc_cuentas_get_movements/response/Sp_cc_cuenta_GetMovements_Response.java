@@ -10,7 +10,6 @@ import java.util.List;
 
 @NoArgsConstructor
 @Data
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class Sp_cc_cuenta_GetMovements_Response implements Serializable {
     @Serial
     private static final long serialVersionUID = 3415530831071630160L;

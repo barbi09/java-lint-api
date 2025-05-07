@@ -7,3 +7,6 @@ export const WEB_CLIENT_CLASSES = ['WebClientBackends'];
 export const METHODS_EXCLUDED = ['translate', 'validate', 'prepare', 'getErrorCode', 'getMessage'];
 export const RESPONSE_HANDLER_CLASSES = ['AppResponseHandler'];
 export const RESPONSE_MAPPER_CLASSES = ['AppResponseMapper'];
+export const TAGS_DTO = ['@Data'];
+export const TAGS_DTO_REQUEST = ['@JsonInclude'];
+export const TAGS_DTO_RESPONSE = ['@JsonIgnoreProperties'];
