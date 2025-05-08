@@ -1,8 +1,0 @@
-otel:
-  log:
-    level: debug
-  exporters:
-    googlecloudtrace:
-      project_id: "52059553089"
-      credentials: "D:\Macro\GitLab_ArquetiposJava\base-ms-template\src\main\resources\bancomacro-test-ms-32dd2a104161.json" # Ruta al archivo JSON de credenciales de Google Cloud
-      span_endpoint: "cloudtrace.googleapis.com"

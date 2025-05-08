@@ -1,0 +1,834 @@
+openapi: 3.0.0
+info:
+  title: TZ-Accounts
+  description: Contrato para MS
+  version: 1.1.00
+servers:
+- url: /v1/tz-accounts
+
+security:
+  - bearerAuth: []
+
+tags:
+  - name: accounts
+    description: Informacion sobre el API MACRO accounts 
+    externalDocs:
+      description: Find out more
+      url: https://docs.google.com/document/d/1t2kc-7Q-a9NqWULRuM1ASnnkOX6-F4p9lXuBy5NHDcI/edit#heading=h.mlu9yxfrfksv #poner url correcta
+paths:
+#---------------------------------------------------------------------
+# GET - Consulta de los movimientos de una cuenta
+#-------------------------------------------------------------------- 
+  /list:
+    get:
+      tags:
+        - accounts
+      summary: Lista de cuentas
+      description: Con este servicio se informarar la lista de cuentas
+      operationId: get-list
+      parameters:
+        - name: x-channel
+          in: header
+          required: true
+          schema:
+            type: integer
+            format : int32
+            example: 66 
+          description: Canal de origen de la operacion
+        - name:  x-customer-id
+          in: header
+          required: true
+          schema:
+            type: integer
+            format : int32
+          examples: 
+            200 :
+              value: 7791
+            404 : 
+              value: 7792
+            409 : 
+              value: 7793
+            500 : 
+              value: 7794
+          description: Codigo de ente MIS
+        - name:  x-request-id
+          in: header
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: "f61c2780-1f91-48f8-aed7-e687b4c617df"
+          description: Identificador único de la solicitud o petición.
+        - name: records-number
+          in: query
+          required: false
+          schema:
+            type: integer
+            format: int32
+            maximum: 20
+            example: 2
+          description: Cantidad de registros por pagina
+        - name: last-record
+          in: query
+          required: false
+          schema:
+            type: string
+            pattern: '^[0-9]{1,15}$'
+          examples: 
+            200-Primera pagina : 
+              value: ""
+            200-Pagina siguiente : 
+              value: "300900000001164" 
+          description: Ultimo numero de cuenta devuelto
+        
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              examples:
+                none:
+                  summary: ""
+                200-Primera pagina: 
+                  $ref: '#/components/examples/list-200-primera'
+                200-Pagina siguiente: 
+                  $ref: '#/components/examples/list-200-paginado'  
+                409-response: 
+                  $ref: '#/components/examples/list-409'
+              schema:
+                $ref: '#/components/schemas/list-get-response' #Idem anterior, sería mas específico en su nombre #OK
+        '400':
+          $ref: '#/components/responses/badRequest'
+        '401': 
+          $ref: '#/components/responses/unauthorized'
+        '404': 
+          $ref: '#/components/responses/notFound'
+        '409':
+          $ref: '#/components/responses/conflict'
+        '429': 
+          $ref: '#/components/responses/tooManyRequests'
+        '500': 
+          $ref: '#/components/responses/internalServerError'
+        '502': 
+          $ref: '#/components/responses/BadGateway'
+        '503':
+          $ref: '#/components/responses/serviceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+
+#---------------------------------------------------------------------
+# GET - Consulta de saldos de una cuenta
+#-------------------------------------------------------------------- 
+  /{account-number}/balance:
+    get:
+      tags:
+        - accounts
+      summary: Saldos de una cuenta
+      description: Con este servicio se informarar los saldos de una cuenta
+      operationId: get-balance
+      parameters:
+        - name: x-channel
+          in: header
+          required: true
+          schema:
+            type: integer
+            format : int32
+            example: 66 
+          description: Canal de origen de la operacion
+        - name:  x-customer-id
+          in: header
+          required: true
+          schema:
+            type: integer
+            format : int32
+            example: 7791 
+          description: Codigo de ente MIS
+        - name:  x-request-id
+          in: header
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: "f61c2780-1f91-48f8-aed7-e687b4c617df"
+          description: Identificador único de la solicitud o petición.
+        - name: account-number
+          in: path
+          required: true
+          schema:
+            type: string
+            maxLength: 16
+            pattern: '^\d+$'
+          examples: 
+            200 :
+              value: "300809400656587"
+            404 : 
+              value: "300809400656599"
+            409 : 
+              value: "300809400656999"
+            500 : 
+              value: "300809400656998"
+          description: Numero de cuenta
+        
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              examples:
+                  none:
+                    summary: ""
+                  200-response: 
+                    $ref: '#/components/examples/balance-200'
+                  409-response: 
+                    $ref: '#/components/examples/balance-409'
+              schema:
+                $ref: '#/components/schemas/balance-get-response' 
+        '400':
+          $ref: '#/components/responses/badRequest'
+        '401': 
+          $ref: '#/components/responses/unauthorized'
+        '404': 
+          $ref: '#/components/responses/notFound'
+        '409':
+          $ref: '#/components/responses/conflict'
+        '429': 
+          $ref: '#/components/responses/tooManyRequests'
+        '500': 
+          $ref: '#/components/responses/internalServerError'
+        '502': 
+          $ref: '#/components/responses/BadGateway'
+        '503':
+          $ref: '#/components/responses/serviceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+  
+  #---------------------------------------------------------------------
+# GET - Consulta detallada de una cuenta
+#-------------------------------------------------------------------- 
+  /{account-number}:
+    get:
+      tags:
+        - accounts
+      summary: Detalle de una cuenta
+      description: Con este servicio se informarar el detalle de una cuenta
+      operationId: get-detail
+      parameters:
+        - name: x-channel
+          in: header
+          required: true
+          schema:
+            type: integer
+            format : int32
+            example: 66 
+          description: Canal de origen de la operacion
+        - name:  x-customer-id
+          in: header
+          required: true
+          schema:
+            type: integer
+            format : int32
+            example: 7791 
+          description: Codigo de ente MIS
+        - name:  x-request-id
+          in: header
+          required: true
+          schema:
+            type: string
+            format: uuid
+            example: "f61c2780-1f91-48f8-aed7-e687b4c617df"
+          description: Identificador único de la solicitud o petición.
+        - name: account-number
+          in: path
+          required: true
+          schema:
+            type: string
+            maxLength: 16
+            pattern: '^\d+$'
+          examples: 
+            200 :
+              value: "300809400656587"
+            404 : 
+              value: "300809400656599"
+            409 : 
+              value: "300809400656999"
+            500 : 
+              value: "300809400656998"
+          description: Numero de cuenta
+        
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              examples:
+                  none:
+                    summary: ""
+                  200-response: 
+                    $ref: '#/components/examples/detail-200'
+                  409-response: 
+                    $ref: '#/components/examples/detail-409'
+              schema:
+                $ref: '#/components/schemas/detail-get-response' 
+        '400':
+          $ref: '#/components/responses/badRequest'
+        '401': 
+          $ref: '#/components/responses/unauthorized'
+        '404': 
+          $ref: '#/components/responses/notFound'
+        '409':
+          $ref: '#/components/responses/conflict'
+        '429': 
+          $ref: '#/components/responses/tooManyRequests'
+        '500': 
+          $ref: '#/components/responses/internalServerError'
+        '502': 
+          $ref: '#/components/responses/BadGateway'
+        '503':
+          $ref: '#/components/responses/serviceUnavailable'
+        '504':
+          $ref: '#/components/responses/GatewayTimeout'
+
+
+components:
+  schemas:
+  #-------------------------------------------------------------------
+  # GET - response - Consulta de lista de cuentas
+  #-------------------------------------------------------------------
+    list-get-response:
+      type: object
+      properties:
+        accounts:
+          type: array
+          description: Lista de cuentas
+          items:
+            $ref: '#/components/schemas/list-get-response-data'
+        pagination:
+          type: object
+          properties:
+            total-records:
+              type: integer
+              format: int32
+              nullable: true
+              example: 0
+              description: Total de registros 
+            records-number:
+              type: integer
+              format: int32
+              nullable: true
+              example: 0
+              description: Total de registros por pagina
+            additional-records:
+              type: boolean
+              example: true
+              description: Indica si existen mas paginas
+
+    list-get-response-data:
+      type: object
+      properties:
+        number:
+          type: string
+          pattern: '^[0-9]{1,15}$'
+          example: ""
+          description: Numero de cuenta
+        status-id:
+          type: string
+          enum: 
+            - "A" #Activa
+            - "I" #Inmovilizada
+          example: "A"
+          description: Estado de la cuenta
+        currency-id:
+          type: integer
+          enum: 
+            - 80 #"Pesos"
+            - 2  #"Dolar"
+            - 98 #"Euros"
+          nullable: true
+          example: 80
+          description: Moneda de la cuenta
+        cbu: 
+          type: string
+          maxLength: 22
+          pattern: '^\d+$'
+          example: ""
+          description: cbu de la cuenta
+        type-id: 
+          type: integer
+          enum:
+            - 3 #Cuenta corriente
+            - 4 #Caja de ahorro
+          nullable: true
+          example: 3
+          description: Tipo  de la cuenta
+        type-description: 
+          type: string
+          maxLength: 32
+          example: ""
+          description: Descripcion del tipo de la cuenta
+        product-bank-id: 
+          type: integer
+          format : int32
+          nullable: true
+          example: 0
+          description: Producto bancario de la cuenta
+        product-bank-description: 
+          type: string
+          maxLength: 32
+          example: ""
+          description: Descripcion del producto bancario de la cuenta
+        balance: 
+          type: object
+          properties:
+            available:
+              type: string
+              pattern: '^[0-9]{0,15}(\.[0-9]{1,2})?$'
+              example: ""
+              description: Saldo disponible de la cuenta
+            bank-draft:
+              type: string
+              pattern: '^[0-9]{0,15}(\.[0-9]{1,2})?$'
+              example: ""
+              description: Saldo a girar
+        customer: 
+          type: object
+          properties:
+             account-holder:
+              type: string
+              example: ""
+              description: Cliente es titular o cotitular de la cuenta
+        conduct-transaction: 
+          type: boolean
+          example: true
+          description: indica si la cuenta es transaccional o no    
+  
+    #----------------------------------------------------------------------------------------------
+    # GET - response - Consulta de saldos de una cuenta
+    #----------------------------------------------------------------------------------------------    
+    balance-get-response:
+      type: object
+      properties:
+        account:
+          type: object
+          properties:
+            currency-id:
+              type: integer
+              enum: 
+                - 80 #"Pesos"
+                - 2  #"Dolar"
+                - 98 #"Euros"
+              nullable: true
+              example: 80
+              description: Moneda de la cuenta
+        balance:
+          type: object
+          properties:
+            remittance:
+              type: string
+              pattern: '^-?[0-9]{0,15}(\.[0-9]{1,2})?$'
+              example: ""
+              description: Importe Remesas.
+            signed_24h:
+              type: string
+              pattern: '^-?[0-9]{0,15}(\.[0-9]{1,2})?$'
+              example: ""
+              description: Importe 24 horas.
+            available:
+              type: string
+              pattern: '^-?[0-9]{0,15}(\.[0-9]{1,2})?$'
+              example: ""
+              description: Importe disponible.
+            accounting:
+              type: string
+              pattern: '^-?[0-9]{0,15}(\.[0-9]{1,2})?$'
+              example: ""
+              description: Importe Saldo Contable.
+            bank-draft:
+              type: string
+              pattern: '^-?[0-9]{0,15}(\.[0-9]{1,2})?$'
+              example: ""
+              description: Importe Saldo a Girar.
+            blocked:
+              type: string
+              pattern: '^-?[0-9]{0,15}(\.[0-9]{1,2})?$'
+              example: ""
+              description: Importe de Bloqueos de Valores.
+            signed_48h:
+              type: string
+              pattern: '^-?[0-9]{0,15}(\.[0-9]{1,2})?$'
+              example: ""
+              description: Importe 48 horas.
+            suspended:
+              type: string
+              pattern: '^-?[0-9]{0,15}(\.[0-9]{1,2})?$'
+              example: ""
+              description: Monto total de valores en suspendo
+            agreement:
+              type: string
+              pattern: '^-?[0-9]{0,15}(\.[0-9]{1,2})?$'
+              example: ""
+              description: Monto total de Acuerdos
+              
+    #----------------------------------------------------------------------------------------------
+    # GET - response - Consulta de detalle de una cuenta
+    #----------------------------------------------------------------------------------------------    
+    detail-get-response:
+      type: object
+      properties:
+        denomination:
+          type: string
+          example: ""
+          description: Denominacion de la cuenta
+        cbu:
+          type: string
+          maxLength: 22
+          pattern: '^\d+$'
+          example: ""
+          description: Cbu de la cuenta consultada
+        officer-id:
+          type: integer
+          format: int32
+          nullable: true
+          example: 0
+          description: Codigo del oficial de la cuenta
+        officer-description:
+          type: string
+          maxLength: 32
+          example: ""
+          description: Descripcion oficial de la cuenta
+        currency-id:
+          type: integer
+          enum: 
+            - 80 #"Pesos"
+            - 2  #"Dolar"
+            - 98 #"Euros"
+          nullable: true
+          example: 80
+          description: Moneda de la cuenta
+        category-id:
+          type: string
+          example: ""
+          description: Categoria de la cuenta
+        category-description:
+          type: string
+          maxLength: 32
+          example: ""
+          description: Codigo de la categoria de la cuenta
+        branch-id:
+          type: integer
+          format: int32
+          nullable: true
+          example: 0
+          description: Codigo de sucursal de la cuenta
+        branch-description:
+          type: string
+          maxLength: 32
+          example: ""
+          description: Descripcion de sucursal de la cuenta
+        type-id:
+          type: integer
+          enum:
+            - 3 #Cuenta corriente
+            - 4 #Caja de ahorro
+          nullable: true
+          example: 3
+          description: Tipo de la cuenta
+        type-description: 
+          type: string
+          maxLength: 32
+          example: ""
+          description: Descripcion del producto de la cuenta
+        product-bank-id:
+          type: integer
+          format: int32
+          nullable: true
+          example: 0
+          description: Producto bancario de la cuenta
+        product-bank-description: 
+          type: string
+          maxLength: 32
+          example: ""
+          description: Descripcion del producto bancario de la cuenta
+        status-id:
+          type: string
+          enum:
+            - "A" #Activa
+            - "I" #Inmovilizada
+          example: "A"
+          description: Estado de la cuenta
+        opening-date:
+          type: string
+          format: date
+          example: "YYYY-MM-DD"
+          description: Fecha de apertura de la cuenta
+        legal-entity-type:
+          type: string
+          enum:
+             - "P"# FIsica
+             - "C"# Juridica
+             - "J"# Judicial
+          example: ""
+          description: Tipo de cuenta
+        last-transaction-date:
+          type: string
+          format: date
+          example: "YYYY-MM-DD"
+          description: Fecha de ultimo movimiento
+        deposit-blocked:
+          type: boolean
+          example: true
+          description: Bloqueado para deposito
+        blocked-withdrawal:
+          type: boolean
+          example: true
+          description: Bloqueado para retiro
+            
+  #------------------------------------------------------------------
+  # ERROR
+  #-------------------------------------------------------------------
+    error: 
+      type: object
+      properties:
+        Code:
+          type: string
+          example: "ERR-XXX"
+        Id:
+          type: string
+          example: "81cfc331-5726-42c6-8a95-2700b45ff5d538919"
+        Message:
+          type: string
+          example: "Error message"
+        Errors:
+          type: array
+          items:
+            $ref: '#/components/schemas/errors'
+    
+    errors:
+      type: object
+      properties:
+        ErrorCode:
+          type: string
+          example: "ER-XXX"
+        Message:
+          type: string
+          example: "Error message"
+        Path:
+          type: string
+          example: "/v1/accounts/.."
+  
+
+  #-----------------------------------------------------------------
+ 
+  responses:
+    badRequest:
+          description: Bad Request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+    unauthorized: 
+          description: Unauthorized
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+    notFound: 
+          description: Forbidden
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+    conflict: 
+          description: Method Not Allowed
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+    tooManyRequests:
+          description: Conflict
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+    internalServerError: 
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+    BadGateway:
+          description: Bad Gateway
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+    serviceUnavailable: 
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+    GatewayTimeout: 
+          description: Gateway Timeout
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/error'
+  
+  #-------------------------------------------------------------------
+  # Ejemplos
+  #-------------------------------------------------------------------
+  examples: 
+    list-200-primera:
+      value:
+        accounts:  
+          - 
+            number: "300809400656587"
+            status-id: "A"
+            currency-id: 80
+            cbu: "2850008930094006565871"
+            type-id: 4
+            type-description: "CA"
+            product-bank-id: 3
+            product-bank-description: "CAJA DE AHORROS"
+            balance:
+                available: "-25411122451768.96"
+                bank-draft: "100000.00"
+            customer:
+                account-holder: "T"
+            conduct-transaction: false
+          - 
+            number: "300900000001164"
+            status-id: "A"
+            currency-id: 2
+            cbu: "2850009630000000011647"
+            type-id: 3
+            type-description: "CC"
+            product-bank-id: 1
+            product-bank-description: "CUENTAS CORRIENTES"
+            balance:
+                available: "148449.48"
+                bank-draft: "200000.00"
+            customer:
+                account-holder: "T"
+            conduct-transaction: true
+        pagination:
+            total-records: 4
+            records-number: 2
+            additional-records: true
+  #-------------------------------------------------------------------
+    list-200-paginado:
+      value:
+        accounts:  
+          - 
+            number: "300909400657669"
+            status-id: "A"
+            currency-id: 80
+            cbu: "2850009630094006576691"
+            type-id: 4
+            type-description: "CA"
+            product-bank-id: 3
+            product-bank-description: "CAJA DE AHORROS"
+            balance:
+                available: "-11660.69"
+                bank-draft: "0.00"
+            customer:
+                account-holder: "T"
+            conduct-transaction: false
+          - 
+            number: "301000000001164"
+            status-id: "A"
+            currency-id: 2
+            cbu: "2850010230000000011647"
+            type-id: 4
+            type-description: "CA"
+            product-bank-id: 3
+            product-bank-description: "CAJA DE AHORROS"
+            balance:
+                available: "-11731.0600"
+                bank-draft: "10000.00"
+            customer:
+                account-holder: "T"
+            conduct-transaction: true
+        pagination:
+            total-records: 4
+            records-number: 2
+            additional-records: false     
+  #-------------------------------------------------------------------             
+    list-409:
+      value:
+        Code: "ER-409" 
+        Id: "d769836d-4d5c-4c0e-9db8-70c684a66d3f134"
+        Message: "Conflict"
+        Errors:
+          - 
+            ErrorCode: "201004"
+            Message: "CUENTA NO EXISTE"
+            Path: "/v1/accounts/list"
+  #------------------------------------------------------------------ 
+    balance-200:
+      value:
+        account: 
+          currency-id: 80
+        balance:  
+          remittance: "500.00"
+          signed_24h: "1000.00"
+          available:  "3500.00"
+          accounting: "5000.00"
+          bank-draft: "2000.00"
+          blocked: "0.00"
+          signed_48h: "2000.00"
+          suspended: "0.00"
+          agreement: "0.00"
+  #-------------------------------------------------------------------
+    balance-409:
+      value:
+        Code: "ER-409" 
+        Id: "d769836d-4d5c-4c0e-9db8-70c684a66d3f134"
+        Message: "Conflict"
+        Errors:
+          - 
+            ErrorCode: "201004"
+            Message: "CUENTA NO EXISTE"
+            Path: "/v1/accounts/300809400656999/balance"
+  #-------------------------------------------------------------------
+    detail-200:
+      value:
+        denomination: "ROMANO CONSORCIO BARRIO PARQUE TRES HORQUETAS"
+        cbu: "2850008930094006565871"
+        officer-id: 2001
+        officer-description: "JUAN PEREZ"
+        currency-id: 80
+        category-id: "HRE"
+        category-description: "Cuenta sueldo"
+        branch-id: 8
+        branch-description: "Sucursal"
+        type-id: 4
+        type-description: "CA"
+        product-bank-id: 3
+        product-bank-description: "CAJA DE AHORROS"
+        status-id: "A"
+        opening-date:  "1999-01-02"
+        legal-entity-type: "C"
+        last-transaction-date: "2024-01-02"
+        deposit-blocked: false
+        blocked-withdrawal: false
+
+  #-------------------------------------------------------------------
+    detail-409:
+      value:
+        Code: "ER-409" 
+        Id: "d769836d-4d5c-4c0e-9db8-70c684a66d3f134"
+        Message: "Conflict"
+        Errors:
+          - 
+            ErrorCode: "201004"
+            Message: "CUENTA NO EXISTE"
+            Path: "/v1/accounts//300809400656999"
+  #-------------------------------------------------------------------       
+  
+  securitySchemes:
+    bearerAuth:            # arbitrary name for the security scheme
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+        

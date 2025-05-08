@@ -56,10 +56,11 @@ export const validateNameMethods: Rule = (cst: any, file: string,  operations: O
     const isExcludedMethod = METHODS_EXCLUDED.some(prefix => methodName.startsWith(prefix));
     const validOperations = operations.flatMap(({ backendId, backendOperationId }) => {
       const operationId = kebabToLowerCamelCase(backendOperationId);
-    
+      const upperBackendId = backendId.toUpperCase();
+
       const variants = [
-        `${backendId}_${operationId}`,
-        `backend_${backendId}_${operationId}`
+        `${upperBackendId}_${operationId}`,
+        `backend_${upperBackendId}_${operationId}`
       ];
     
       return variants;
@@ -87,7 +88,9 @@ export const validateNameMethods: Rule = (cst: any, file: string,  operations: O
     const classNames = RESPONSE_HANDLER_CLASSES.some(className => file.includes(className));
     const isExcludedMethod = METHODS_EXCLUDED.some(prefix => methodName.startsWith(prefix));
     const validOperations = operations.flatMap(({ backendId, backendOperationId }) => {
-      return `handleResponse_${backendId}_${kebabToLowerCamelCase(backendOperationId)}`;
+      const upperBackendId = backendId.toUpperCase();
+
+      return `handleResponse_${upperBackendId}_${kebabToLowerCamelCase(backendOperationId)}`;
     });    
 
     if (classNames && !validOperations.includes(methodName) && !isExcludedMethod) {

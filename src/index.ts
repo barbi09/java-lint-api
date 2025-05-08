@@ -43,19 +43,21 @@ app.post('/analyze', upload.fields([{ name: 'zip' }, { name: 'xlsx' }]), async (
   }
 
   const zipPath = zipFile.path;
-  const extractPath = path.join('tmp', uuidv4()); 
- 
+  const extractPath = path.join('tmp', uuidv4());
+
   try {
 
     // Step 1: Analyze XLSX file
-   const operationsData = analyzeExcelFile(xlsxFile);
+    const operationsData = analyzeExcelFile(xlsxFile);
 
     // Step 2: Unzip project
     await fs.mkdir(extractPath, { recursive: true });
+
     try {
-      await fs.createReadStream(zipPath)
-        .pipe(unzipper.Extract({ path: extractPath }))
-        .promise();
+
+        const directory = await unzipper.Open.file(zipPath);
+        await directory.extract({ path: extractPath });
+
     } catch (unzipError) {
       throw new Error('Failed to unzip project. Make sure it is a valid .zip file.');
     }
@@ -76,8 +78,8 @@ app.post('/analyze', upload.fields([{ name: 'zip' }, { name: 'xlsx' }]), async (
       const constantsCst = parse(constantsCode); // using java-parser
       globalConstants = extractConstantsFromCst(constantsCst, javaIssues); // <-- your util function
     }
-    
-    
+
+
     let globalUsedConstants = new Set<string>();
 
 
@@ -91,9 +93,9 @@ app.post('/analyze', upload.fields([{ name: 'zip' }, { name: 'xlsx' }]), async (
         console.error(`Failed to parse ${filePath}:`, (err as Error).message);
       }
     }
-    
+
     javaIssues.push(...finalizeUnusedConstants(globalConstants, globalUsedConstants));
-    
+
 
     // ✅ Return final response
     res.json({
@@ -109,10 +111,10 @@ app.post('/analyze', upload.fields([{ name: 'zip' }, { name: 'xlsx' }]), async (
     try {
       if (zipPath) await fs.remove(zipPath);
       if (xlsxFile?.path) await fs.remove(xlsxFile.path);
-  
+
       // Small wait for streams to close
       await new Promise((resolve) => setTimeout(resolve, 300));
-  
+
       if (extractPath) await rimraf(extractPath);
       // <- use rimraf
     } catch (cleanupError) {

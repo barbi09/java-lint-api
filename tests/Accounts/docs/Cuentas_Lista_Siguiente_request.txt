@@ -1,0 +1,65 @@
+{
+    "spName": "cob_cuentas..sp_cc_cuenta",
+    "params": [
+        {
+            "name": "@t_trn",
+            "dataType": 52,
+            "value": "30420",
+            "ioType": 0
+        },
+        {
+            "name": "@i_operacion",
+            "dataType": 47,
+            "value": "C",
+            "ioType": 0
+        },
+        {
+            "name": "@i_tipo_operacion",
+            "dataType": 47,
+            "value": "A",
+            "ioType": 0
+        },
+        {
+            "name": "@i_opcion",
+            "dataType": 47,
+            "value": "R",
+            "ioType": 0
+        },
+        {
+            "name":"@i_n_cliente",
+            "dataType":56,
+            "value":"7791",
+            "ioType": 0
+        },
+        {
+            "name":"@i_n_filas",
+            "dataType":48,
+            "value":"20",
+            "ioType": 0
+        },
+        {
+            "name":"@i_n_cta_banco",
+            "dataType":39,
+            "value":"300800000001164",
+            "ioType": 0
+        },
+        {
+            "name":"@o_k_total",
+            "dataType":56,
+            "value":"",
+            "ioType": 1
+        },
+        {
+            "name":"@o_k_pagina",
+            "dataType":52,
+            "value":"",
+            "ioType": 1
+        },
+        {
+            "name":"@o_m_hay_mas",
+            "dataType":47,
+            "value":"",
+            "ioType": 1
+        }
+    ]
+}

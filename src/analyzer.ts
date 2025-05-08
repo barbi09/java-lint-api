@@ -39,9 +39,9 @@ export function analyzeExcelFile(xlsxFile: any): Operation[] {
           const backendIdCell = sheet[BACKEND_ID_CELL];
   
           operations.push({
-            id: sheetName,
-            backendOperationId: backendOperationIdCell ? backendOperationIdCell.v : null,
-            backendId: backendIdCell ? backendIdCell.v : null
+            id: sheetName.trim(),
+            backendOperationId: backendOperationIdCell ? backendOperationIdCell.v.trim() : null,
+            backendId: backendIdCell ? backendIdCell.v.trim() : null
           });
         }
       });
