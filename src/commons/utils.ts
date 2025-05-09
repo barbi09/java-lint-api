@@ -1,5 +1,6 @@
-import { parse } from 'java-parser';
 import { Issue } from '../rules/types';
+import { ErrorRequestHandler } from 'express';
+import multer from 'multer';
 
 export function kebabToLowerCamelCase(input: string): string {
   return input.replace(/-([a-z])/g, (_, char: string) => char.toUpperCase());
@@ -113,3 +114,26 @@ export function finalizeUnusedConstants(globalConstants: { name: string; line: n
 export function isLowerCamelCase(name: string): boolean {
   return /^[a-z][a-zA-Z0-9]*$/.test(name);
 }
+ 
+export const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
+  if (err.code === 'LIMIT_UNEXPECTED_FILE') {
+    res.status(400).json({
+      error: 'Unexpected field in form-data',
+      details: err.field
+    });
+    return; // <- Optionally you can still add a plain `return;` to finish execution
+  }
+
+  if (err instanceof multer.MulterError) {
+    res.status(400).json({
+      error: 'Multer error',
+      details: err.message
+    });
+    return;
+  }
+
+  res.status(500).json({
+    error: 'Internal server error',
+    details: err.message
+  });
+};
