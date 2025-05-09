@@ -1,5 +1,6 @@
 //XSLX
 export const BACKEND_OPERATION_ID_CELL = 'C14';
+export const NAME_MS_ID_CELL = 'C1';
 export const BACKEND_ID_CELL = 'C12';
 export const HTTP_METHOD_PREFIXES = ['get-', 'post-', 'put-', 'delete-', 'patch-'];
 export const CONTROLLER_SERVICES_CLASSES = ['AppController', 'AppControllerImpl', 'AppService'];

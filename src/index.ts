@@ -10,6 +10,8 @@ import { analyzeJavaFile, analyzeExcelFile, analyzeJavaFileConstants } from './a
 import { Issue } from './rules/types';
 import { v4 as uuidv4 } from 'uuid';
 import { extractConstantsFromCst, finalizeUnusedConstants, kebabToLowerCamelCase } from './commons/utils';
+import { validatePomData } from './rules/validatePomData';
+import { parseStringPromise } from 'xml2js';
 
 
 const app = express();
@@ -55,8 +57,8 @@ app.post('/analyze', upload.fields([{ name: 'zip' }, { name: 'xlsx' }]), async (
 
     try {
 
-        const directory = await unzipper.Open.file(zipPath);
-        await directory.extract({ path: extractPath });
+      const directory = await unzipper.Open.file(zipPath);
+      await directory.extract({ path: extractPath });
 
     } catch (unzipError) {
       throw new Error('Failed to unzip project. Make sure it is a valid .zip file.');
@@ -69,6 +71,7 @@ app.post('/analyze', upload.fields([{ name: 'zip' }, { name: 'xlsx' }]), async (
       ignore: ['**/target/**']
     });
 
+    // Step 4: Analyze Constants
     const constantsFilePath = javaFiles.find(p => p.endsWith('Constants.java'));
     let globalConstants: { name: string; line: number }[] = [];
     const javaIssues: Issue[] = [];
@@ -78,6 +81,22 @@ app.post('/analyze', upload.fields([{ name: 'zip' }, { name: 'xlsx' }]), async (
       const constantsCst = parse(constantsCode); // using java-parser
       globalConstants = extractConstantsFromCst(constantsCst, javaIssues); // <-- your util function
     }
+
+    // Step 5: Analyze pom.xml
+    const pomPath = globSync('**/pom.xml', {
+      cwd: extractPath,
+      absolute: true,
+    })[0]; // get the first (and likely only) one
+
+    if (!pomPath) {
+      console.warn('⚠️ No pom.xml found in the extracted project.');
+    } else {
+      const xmlContent = await fs.promises.readFile(pomPath, 'utf8');
+      const parsed = await parseStringPromise(xmlContent);
+      const pomIssues = validatePomData(null, parsed?.project, operationsData);
+      javaIssues.push(...pomIssues); // reuse javaIssues to return them together
+    }
+
 
 
     let globalUsedConstants = new Set<string>();

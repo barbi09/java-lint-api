@@ -26,7 +26,7 @@ export const validateDtoAnnotations: Rule = (cst: any, file: string): Issue[] =>
             for (const mod of modifiers) {
                 const ann = mod?.children?.annotation?.[0];
                 const annotationName = ann?.children?.typeName?.[0]?.children?.Identifier?.map((id: any) => id.image).join('.');
-
+                
                 if (annotationName) {
                     const formatted = '@' + annotationName;
                     annotationsFound.push(formatted);

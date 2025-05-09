@@ -2,7 +2,7 @@ import { parse } from 'java-parser';
 import { rules } from './rules';
 import { Issue, Operation } from './rules/types';
 import XLSX, { utils } from 'xlsx';
-import { BACKEND_OPERATION_ID_CELL, HTTP_METHOD_PREFIXES, BACKEND_ID_CELL } from './commons/constants';
+import { BACKEND_OPERATION_ID_CELL, HTTP_METHOD_PREFIXES, BACKEND_ID_CELL, NAME_MS_ID_CELL } from './commons/constants';
 import { getUsedConstants } from './commons/utils';
 
 
@@ -37,11 +37,13 @@ export function analyzeExcelFile(xlsxFile: any): Operation[] {
           const sheet = workbook.Sheets[sheetName];
           const backendOperationIdCell = sheet[BACKEND_OPERATION_ID_CELL];
           const backendIdCell = sheet[BACKEND_ID_CELL];
+          const nameMSCell = sheet[NAME_MS_ID_CELL];
   
           operations.push({
             id: sheetName.trim(),
             backendOperationId: backendOperationIdCell ? backendOperationIdCell.v.trim() : null,
-            backendId: backendIdCell ? backendIdCell.v.trim() : null
+            backendId: backendIdCell ? backendIdCell.v.trim() : null,
+            nameMS: nameMSCell ? nameMSCell.v.trim() : null
           });
         }
       });
